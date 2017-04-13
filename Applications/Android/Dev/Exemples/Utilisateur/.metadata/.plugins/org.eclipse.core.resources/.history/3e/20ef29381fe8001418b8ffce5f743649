@@ -1,0 +1,97 @@
+package com.example.arbitre.models;
+
+import java.io.IOException;
+import java.io.PrintStream;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+import android.os.AsyncTask;
+
+// Singleton
+public class ClientSocket extends AsyncTask<Void, Void, ClientSocket>{
+	
+	private static ClientSocket cs;
+	private String serverIP = "151.80.159.27";
+	private int serverPort = 9898;
+	private Socket socket;
+	
+	private ClientSocket()
+	{
+		new Thread(new ClientThread()).start();
+	}
+	
+	public static ClientSocket GetInstance(){
+		if(cs == null)
+			cs = new ClientSocket();
+		
+		return cs;
+	}	
+	
+	public void Write(String message){
+		try {
+			PrintStream out = new PrintStream(socket.getOutputStream(), true);
+			out.write(message.getBytes());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public String Read(){
+		return null;
+	}
+	
+	public void Close(){
+		try {
+			socket.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+	@Override
+	protected ClientSocket doInBackground(Void... params) {
+		if(cs == null)
+			cs = new ClientSocket();
+		return cs;
+	}
+	
+	// ACCESSORS
+
+	public String getServerIP() {
+		return serverIP;
+	}
+
+	public void setServerIP(String serverIP) {
+		this.serverIP = serverIP;
+	}
+
+	public int getServerPort() {
+		return serverPort;
+	}
+
+	public void setServerPort(int serverPort) {
+		this.serverPort = serverPort;
+	}
+
+	class ClientThread implements Runnable {
+	
+		@Override
+		public void run() {
+	
+			try {
+				InetAddress serverAddr = InetAddress.getByName(serverIP);
+	
+				socket = new Socket(serverAddr, serverPort);
+	
+			} catch (UnknownHostException e1) {
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+	
+		}
+	
+	}
+}

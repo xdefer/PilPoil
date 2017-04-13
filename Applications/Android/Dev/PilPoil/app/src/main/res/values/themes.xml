@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="@style/_PilPoil" />
+
+    <style name="_PilPoil" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:editTextStyle">@style/EditTextPilPoil</item>
+
+        <item name="android:textColorHighlight">#99990d00</item>
+
+        <item name="android:textColorHint">@color/grey</item>
+
+        <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewPilPoil</item>
+
+        <item name="android:checkboxStyle">@style/CheckBoxPilPoil</item>
+
+        <item name="android:radioButtonStyle">@style/RadioButtonPilPoil</item>
+
+        <item name="android:buttonStyle">@style/ButtonPilPoil</item>
+
+        <item name="android:imageButtonStyle">@style/ImageButtonPilPoil</item>
+
+        <item name="android:spinnerStyle">@style/SpinnerPilPoil</item>
+
+        <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItemPilPoil</item>
+
+        <item name="android:progressBarStyleHorizontal">@style/ProgressBarPilPoil</item>
+
+        <item name="android:seekBarStyle">@style/SeekBarPilPoil</item>
+
+        <item name="android:ratingBarStyle">@style/RatingBarPilPoil</item>
+
+        <item name="android:ratingBarStyleIndicator">@style/RatingBarBigPilPoil</item>
+
+        <item name="android:ratingBarStyleSmall">@style/RatingBarSmallPilPoil</item>
+
+        <item name="android:buttonStyleToggle">@style/TogglePilPoil</item>
+
+        <item name="android:listViewStyle">@style/ListViewPilPoil</item>
+
+        <item name="android:listViewWhiteStyle">@style/ListViewPilPoil.White</item>
+
+        <item name="android:spinnerItemStyle">@style/SpinnerItemPilPoil</item>
+
+        <item name="colorControlNormal">#c5c5c5</item>
+
+        <item name="colorControlActivated">@color/grey</item>
+
+        <item name="colorControlHighlight">@color/grey</item>
+
+    </style>
+
+
+</resources>

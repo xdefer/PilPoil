@@ -1,0 +1,23 @@
+{
+    "pilPoilApp": {
+        "adType" : {
+            "home": {
+                "title": "AdTypes",
+                "createLabel": "Create a new AdType",
+                "createOrEditLabel": "Create or edit a AdType",
+                "search": "Search for AdType"
+            },
+            "created": "A new AdType is created with identifier {{ param }}",
+            "updated": "A AdType is updated with identifier {{ param }}",
+            "deleted": "A AdType is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete AdType {{ id }}?"
+            },
+            "detail": {
+                "title": "AdType"
+            },
+            "label": "Label",
+            "ad": "Ad"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "pilpoilApp": {
+        "animalType" : {
+            "home": {
+                "title": "AnimalTypes",
+                "createLabel": "Créer un nouveau AnimalType",
+                "createOrEditLabel": "Créer ou éditer un AnimalType",
+                "search": "Search for AnimalType"
+            },
+            "created": "Un nouveau AnimalType a été créé avec l'identifiant {{ param }}",
+            "updated": "Le AnimalType avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le AnimalType avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le AnimalType {{ id }} ?"
+            },
+            "detail": {
+                "title": "AnimalType"
+            },
+            "label": "Label",
+            "animal": "Animal",
+            "breed": "Breed"
+        }
+    }
+}
+

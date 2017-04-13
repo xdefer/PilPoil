@@ -1,0 +1,115 @@
+package com.example.arbitre;
+
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+
+import org.json.JSONException;
+
+import com.example.arbitre.models.Court;
+import com.example.arbitre.models.Connection;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
+import android.app.Activity;
+import android.content.Intent;
+
+
+public class MainActivity extends Activity {
+	List<Court> lesCourts = new ArrayList<Court>();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);     
+        
+        // TODO Initialiser Socket arbitre
+        // json
+        
+        
+        // Recuperation JSON depuis le serveur
+        String url = "http://82.237.169.116/rolandgarros/listCourt.php";
+        
+        String json = connexion(url, "GET", null);
+        
+        //String json = "{\"courts\":[{\"num\":\"1\", \"libelle\":\"lib1\"},{\"num\":\"2\", \"libelle\":\"lib2\"},{\"num\":\"3\", \"libelle\":\"lib3\"}]}";
+        
+        // Charger le spinner avec le json precedement recupere
+        loadSpinner(json);
+        
+	}    
+    
+    public void onBtnSuivantClick(View v){
+    	// garder en memoire le court choisis
+
+    	Spinner sItems = (Spinner) findViewById(R.id.spinnerCourt);
+    	String courtNum = "";
+    	
+    	for(Court unCourt : lesCourts){
+    		if(unCourt.getLibelle().equals(sItems.getSelectedItem().toString()))
+    			courtNum = Integer.toString(unCourt.getNum());
+    	}
+    	
+    	Intent intent = new Intent(this, ChoixJoueurs.class);
+        // On envoie les données au layout
+        intent.putExtra("courtName", courtNum);
+        // On "affiche"
+        this.startActivity(intent);
+    	
+    	//Toast.makeText(getApplicationContext(), "Court: " + courtNum, Toast.LENGTH_SHORT).show();
+    }
+    
+    private void loadSpinner(String json){
+    	List<String> spinnerArray =  new ArrayList<String>();
+    	
+    	try {
+			lesCourts = Court.listFromJSON(json);
+		} catch (JSONException e) {
+			Log.e("JSON Err","JSON Error: "+ e);
+			e.printStackTrace();
+		} catch (ParseException e) {
+			Log.e("Parse Err", "Parse Error: " + e);
+			e.printStackTrace();
+		}
+    	
+    	for(Court unCourt : lesCourts){
+    		spinnerArray.add(unCourt.getLibelle());
+    	}
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+            this, android.R.layout.simple_spinner_item, spinnerArray);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Spinner sItems = (Spinner) findViewById(R.id.spinnerCourt);
+        sItems.setAdapter(adapter);
+    }
+    
+    private String connexion(final String url,
+            final String method, final String json) {
+        String rep = "";
+
+        if (Connection.isNetworkAvailable(this)) { // on verifie qu on a acces au web
+            try { // oui on essaye de se connecter a l adresse
+                rep = new Connection(json, method).execute(url).get();
+                System.out.println("Reponse serveur (json): " + rep);    
+            } catch (InterruptedException e) {
+                System.out.println("InterruptedException: " + e);
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                System.out.println("ExecutionException: " + e);
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("No network connection available.");
+            Toast.makeText(this.getApplicationContext(),
+                    "No network connection available.", Toast.LENGTH_SHORT)
+                    .show();
+        }
+        return rep;
+    }
+}

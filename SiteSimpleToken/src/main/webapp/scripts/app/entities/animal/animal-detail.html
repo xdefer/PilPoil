@@ -1,0 +1,94 @@
+
+<div>
+    <h2><span translate="pilpoilwebApp.animal.detail.title">Animal</span> {{animal.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="pilpoilwebApp.animal.name">Name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{animal.name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="pilpoilwebApp.animal.age">Age</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{animal.age}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="pilpoilwebApp.animal.sexe">Sexe</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{animal.sexe}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="pilpoilwebApp.animal.tatoo">Tatoo</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{animal.tatoo}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="pilpoilwebApp.animal.chip">Chip</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{animal.chip}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="pilpoilwebApp.animal.photo">Photo</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{animal.photo}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="pilpoilwebApp.animal.colors">Colors</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{animal.colors}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="pilpoilwebApp.animal.animalType">animalType</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="animalType.detail({id:animal.animalType.id})">{{animal.animalType.id}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="pilpoilwebApp.animal.breed">breed</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="breed.detail({id:animal.breed.id})">{{animal.breed.id}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

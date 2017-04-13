@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:stretchColumns="*" >
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            style=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="libelle" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/libelle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:layout_span="2" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/bn_get"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="retrieveSampleData"
+            android:text="get" />
+
+        <Button
+            android:id="@+id/bn_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="postData"
+            android:text="post" />
+
+        <Button
+            android:id="@+id/bn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="clearControls"
+            android:text="clear" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/res_get"
+            android:layout_column="0"
+            android:layout_span="3" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            style=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="login" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:layout_span="2" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            style=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mdp" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/mdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:layout_span="2" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/bn_auth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="auth"
+            android:text="Connexion" />
+
+        <Button
+            android:id="@+id/bn_clearAuth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="clearAuth"
+            android:text="Clear" />
+
+        <Button
+            android:id="@+id/bn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="logout"
+            android:text="Logout" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/res_auth"
+            android:layout_column="0"
+            android:layout_span="3" />
+    </TableRow>
+
+
+</TableLayout>

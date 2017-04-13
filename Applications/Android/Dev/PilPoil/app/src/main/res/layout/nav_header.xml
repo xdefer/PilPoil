@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/profileBox"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:paddingTop="50dp"
+    android:paddingBottom="20dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_gravity="start">
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="40dp"
+        android:layout_height="32dp"
+        android:src="@drawable/user_icon"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/avatar"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/avatar"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/headerButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/logIcon"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="2dp"
+                android:src="@drawable/logout_icon"/>
+
+            <Button
+                android:id="@+id/logButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:textColor="#fff"
+                android:textSize="12sp"
+                android:background="@null"
+                android:padding="0dp"
+                android:layout_margin="0dp"
+                android:minHeight="@null"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,80 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myAnimalLabel" translate="pilpoilwebApp.animal.home.createOrEditLabel">Create or edit a Animal</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="animal.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pilpoilwebApp.animal.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="animal.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pilpoilwebApp.animal.age" for="field_age">Age</label>
+            <input type="text" class="form-control" name="age" id="field_age"
+                    ng-model="animal.age"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pilpoilwebApp.animal.sexe" for="field_sexe">Sexe</label>
+            <input type="text" class="form-control" name="sexe" id="field_sexe"
+                    ng-model="animal.sexe"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pilpoilwebApp.animal.tatoo" for="field_tatoo">Tatoo</label>
+            <input type="text" class="form-control" name="tatoo" id="field_tatoo"
+                    ng-model="animal.tatoo"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pilpoilwebApp.animal.chip" for="field_chip">Chip</label>
+            <input type="text" class="form-control" name="chip" id="field_chip"
+                    ng-model="animal.chip"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pilpoilwebApp.animal.photo" for="field_photo">Photo</label>
+            <input type="text" class="form-control" name="photo" id="field_photo"
+                    ng-model="animal.photo"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="pilpoilwebApp.animal.colors" for="field_colors">Colors</label>
+            <input type="text" class="form-control" name="colors" id="field_colors"
+                    ng-model="animal.colors"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="pilpoilwebApp.animal.animalType" for="field_animalType">animalType</label>
+            <select class="form-control" id="field_animalType" name="animalType" ng-model="animal.animalType" ng-options="animalType as animalType.id for animalType in animaltypes track by animalType.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="pilpoilwebApp.animal.breed" for="field_breed">breed</label>
+            <select class="form-control" id="field_breed" name="breed" ng-model="animal.breed" ng-options="breed as breed.id for breed in breeds track by breed.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

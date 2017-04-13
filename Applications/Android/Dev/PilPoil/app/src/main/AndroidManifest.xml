@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.project.app.pilpoil"
+    android:versionCode="1"
+    android:versionName="0.1.0" >
+
+    <!-- Used for Checking network state. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- To check whether internet connection is available. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- This permission is needed to run maps. -->
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <!-- Writing to external storage. -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- To get user’s location using WiFi and mobile network. -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- To get user’s location using GPS. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Permission for call -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="true" />
+
+    <application
+        android:name=".Service.GlobalState"
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme.NoActionBar"
+        tools:ignore="HardcodedDebugMode"
+        android:screenOrientation="portrait" >
+        <activity
+            android:name=".Activity.MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activity.SplashActivity"
+            android:label="@string/app_name"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activity.FindAndLostActivity"
+            android:label="@string/details_du_signalement"
+            android:launchMode="singleTask"
+            android:parentActivityName=".Activity.MainActivity"
+            android:windowSoftInputMode="stateHidden" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.MainActivity" />
+        </activity>
+
+        <!--
+        <receiver
+            android:name=".Service.NetworkChangeReceiver"
+            android:label="NetworkChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        -->
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".Activity.ConnexionActivity"
+            android:label="@string/title_activity_activity_connexion"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Activity.RegistrationActivity"
+            android:label="@string/title_activity_activity_connexion"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".Activity.ProfilActivity"
+            android:label="@string/title_activity_activity_profil"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Activity.MyPetsActivity"
+            android:label="@string/title_activity_activity_mes_animaux" />
+        <activity
+            android:name=".Activity.PetDetailActivity"
+            android:label="@string/title_activity_activity_pet_detail" />
+        <activity
+            android:name=".Activity.AddPetActivity"
+            android:label="@string/title_activity_activity_add_pet" />
+        <activity
+            android:name=".Activity.AdDetailsActivity"
+            android:label="@string/title_activity_activity_ad_details" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="CLOUDINARY_URL"
+            android:value="cloudinary://786239969984472:6zbImcBbWO1WGqAp3pK_sq6Ba1w@lookas33" />
+
+        <activity
+            android:name=".Activity.MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".Activity.Maps2Activity"
+            android:label="@string/title_activity_maps_result" />
+        <activity
+            android:name=".Activity.AboutActivity"
+            android:label="@string/title_activity_about" />
+        <activity
+            android:name=".Activity.IntroActivity"
+            android:label="@string/intro" />
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider1061561647241320"
+            android:exported="true" />
+
+    </application>
+
+</manifest>

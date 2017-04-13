@@ -1,0 +1,329 @@
+<resources>
+
+    <string name="pilpoil">Pil\'Poil</string>
+
+    <!-- CLOUDINARY
+
+    login : lookas33
+    password : pilpoil -->
+    <string name="cloud_name_cloudinary">lookas33</string>
+    <string name="key_cloudinary">786239969984472</string>
+    <string name="password_cloudinary">6zbImcBbWO1WGqAp3pK_sq6Ba1w</string>
+    <string name="env_var_cloudinary">cloudinary://786239969984472:6zbImcBbWO1WGqAp3pK_sq6Ba1w@lookas33</string>
+
+    <string name="app_name">PilPoil</string>
+    <string name="facebook_app_id">1061561647241320</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_add_pet">Ajouter</string>
+    <string name="details_du_signalement">Détails du signalement</string>
+    <string name="title_activity_activity_connexion">Connexion</string>
+    <string name="title_activity_activity_profil">Préférences</string>
+    <string name="title_activity_activity_location">Localisation</string>
+    <string name="title_activity_activity_ad_details">Détails de l\'annonce</string>
+    <string name="title_activity_maps">Carte</string>
+    <string name="title_activity_maps_result">Annonces trouvées</string>
+    <string name="title_activity_maps_result_cat">Chats trouvés</string>
+    <string name="title_activity_maps_result_chien">Chiens trouvés</string>
+    <string name="title_activity_about">À propos</string>
+
+    <string name="titleFind">Vous avez trouvé</string>
+    <string name="titleLost">Vous avez perdu</string>
+    <string name="cat">Chat</string>
+    <string name="dog">Chien</string>
+    <string name="others">Autres</string>
+    <string name="titleForm">Décrivez l\'animal ici</string>
+    <string name="form_result_title"> animaux correspondants au vôtre ont été aperçus.</string>
+    <string name="form_result_ray">Dans un rayon de </string>
+    <string name="form_result_zero_animal">Aucun animal correspondant au vôtre n\'a encore été aperçu.</string>
+    <string name="form_findLocation">Trouvé à :&#160;</string>
+    <string name="form_LostLocation">Perdu à :&#160;</string>
+    <string name="form_getPosition">Obtenir position</string>
+    <string name="form_findDate">Trouvé le :&#160;</string>
+    <string name="form_lostDate">Perdu le :&#160;</string>
+    <string name="form_rescued">Animal recueilli :&#160;</string>
+    <string name="form_rescYes">Oui</string>ss
+    <string name="form_rescNo">Non</string>
+    <string name="form_infosUser">Communiquez vos coordonnées au propriétaire</string>
+    <string name="form_infosPet">Informations sur l\'animal</string>
+    <string name="form_infosGene">Informations générales</string>
+    <string name="form_phone">Téléphone :&#160;</string>
+    <string name="form_mail">Mail :&#160;</string>
+    <string name="form_connexion">Connexion</string>
+    <string name="form_forgottenPassword">Mot de passe oublié ?</string>
+    <string name="form_createUser">Créer son compte</string>
+    <string name="form_needUser">Un compte est nécessaire pour déclarer son animal perdu et accéder aux signalements de la communauté</string>
+    <string name="form_firstname">Prénom</string>
+    <string name="form_lastname">Nom</string>
+    <string name="form_password">Mot de passe</string>
+    <string name="form_confirm">Confirmation</string>
+    <string name="form_save">Enregistrer</string>
+    <string name="form_tatoo">Tatouage :&#160;</string>
+    <string name="form_genderM">Mâle</string>
+    <string name="form_genderF">Femelle</string>
+    <string name="form_jeune">Jeune</string>
+    <string name="form_adulte">Adulte</string>
+    <string name="form_login">Login</string>
+    <string name="form_name">Nom :&#160;</string>
+    <string name="form_chip">Puce :&#160;</string>
+    <string name="form_animalType">Type d\'animal : &#160;</string>
+    <string name="noNotLostPetAuth">Vous n\'avez aucun animal pouvant être déclaré comme perdu pour le moment</string>
+
+    <!-- Call pop up -->
+    <string name="phone">Appeler</string>
+    <string name="callUser">Appeler l\'annonceur ? </string>
+
+    <!-- Email -->
+    <string name="lost">Perdu</string>
+    <string name="ad">Annonce</string>
+    <string name="in">à</string>
+    <string name="emailError">Envoie de mail impossible depuis votre appareil</string>
+    <string name="emailSend">Envoie de l\'email...</string>
+
+    <!-- Ad details -->
+    <string name="createAd">&#160;Signalé le :&#160;</string>
+    <string name="by">&#160;par&#160;</string>
+    <string name="colors">Couleur(s) :&#160;</string>
+    <string name="and">&#160;et&#160;</string>
+    <string name="reportAd">&#160;Signaler l\'annonce</string>
+    <string name="notIndic">&#160;Non indiqué</string>
+    <string name="notIndicNoWhiteSpace">Non indiqué</string>
+
+    <!-- Animal Details -->
+    <string name="deleteDialogTitle">Suppression d\'un animal</string>
+    <string name="deleteDialogMsg">Voulez-vous vraiment supprimer votre animal ?</string>
+    <string name="nameRequired">Vous devez donner un nom à votre animal</string>
+    <string name="form_unknowF">-- Inconnue --</string>
+    <string name="form_unknowM">-- Inconnu --</string>
+
+    <string name="form_changePassword">Modification du mot de passe</string>
+
+    <string name="form_default_breed">Indiquez une Race</string>
+    <string name="form_default_age">Indiquez une morphologie </string>
+    <string name="form_default_gender">Indiquez le sexe</string>
+
+    <string name="form_gender">Sexe :&#160;</string>
+    <string name="form_breed">Race :&#160;</string>
+    <string name="form_age">Morphologie :&#160;</string>
+
+    <string-array name="genderArray">
+        <item>@string/form_default_gender</item>
+        <item>@string/form_genderM</item>
+        <item>@string/form_genderF</item>
+    </string-array>
+
+    <string-array name="ageArray">
+        <item>@string/form_default_age</item>
+        <item>@string/form_jeune</item>
+        <item>@string/form_adulte</item>
+    </string-array>
+
+    <string-array name="genderArrayForPetDetails">
+        <item>@string/form_unknowF</item>
+        <item>@string/form_genderM</item>
+        <item>@string/form_genderF</item>
+    </string-array>
+
+    <string-array name="ageArrayForPetDetails">
+        <item>@string/form_unknowM</item>
+        <item>@string/form_jeune</item>
+        <item>@string/form_adulte</item>
+    </string-array>
+
+    <string-array name="arraySignalement">
+        <item>Contenu inapproprié</item>
+        <item>Caractère sexuel</item>
+        <item>Vulgarité</item>
+    </string-array>
+
+    <string-array name="arrayChoicePicture">
+        <item>Gallery</item>
+        <item>Caméra</item>
+        <item>Supprimer la photo</item>
+    </string-array>
+
+    <string name="form_colors">Couleur(s) :&#160;</string>
+    <string name="form_details">Précision(s) :&#160;</string>
+    <string name="form_publish">Publier</string>
+    <string name="titleProfil">Mon profil</string>
+    <string name="titleMyAnimals">Mes animaux</string>
+    <string name="oldPassword">Ancien mot de passe</string>
+    <string name="newPassword">Nouveau mot de passe</string>
+    <string name="signalAlert">signalement(s) pourrait correspondre à votre alerte</string>
+    <string name="distanceAlert">Distance d\'alerte</string>
+    <string name="title_activity_activity_test_accordion">activity_test_accordion</string>
+    <string name="title_activity_activity_mes_animaux">Mes animaux</string>
+    <string name="wifi_enabled">Wifi activé</string>
+    <string name="mobile_data_enabled">Données mobile activées</string>
+    <string name="not_connected_to_internet">Aucune connexion internet</string>
+    <string name="settings">Paramètres</string>
+    <string name="trouve_le">Trouvé le</string>
+    <string name="a">à</string>
+    <string name="km">km</string>
+    <string name="bonjour">Bonjour</string>
+    <string name="vous_netes_pas_connecte">Vous n\'êtes pas connecté</string>
+    <string name="connexion">Connexion</string>
+    <string name="deconnexion">Deconnexion</string>
+
+
+    <!-- INTENT -->
+    <string name="no_bundle">Aucun bundle récupéré</string>
+    <string name="no_current_animal_id">Aucun type animal récupéré</string>
+
+
+    <!-- LOCALISATION -->
+    <string name="title_localisation">Localisation</string>
+    <string name="title_result">Résultats</string>
+    <string name="location_settings">Paramètres de localisation</string>
+    <string name="location_not_allowed">Pour utiliser l\'application votre GPS doit être activé. Activez-le dans les paramètres.</string>
+    <string name="network_not_allowed">Erreur de connexion. Vérifiez votre connexion à internet (3G, 4G, Wifi, ...). Activez-la dans les paramètres.</string>
+    <string name="cancel">Annuler</string>
+    <string name="utils">Paramètres</string>
+    <string name="search">Chercher</string>
+    <string name="action_address_saved">Adresse sauvegardée</string>
+    <string name="google_api_key"></string>
+    <string name="action_clear">Effacer</string>
+    <string name="action_circle">Dessiner Cercle</string>
+    <string name="action_overlay">Dessiner Overlay</string>
+    <string name="action_polygon">Dessiner Polygone</string>
+    <string name="action_traffic">Afficher/Cacher Traffic</string>
+    <string name="action_cycle_map_type">Cycle Map Type</string>
+    <string name="dialog_play_services_unavailable">Google Play Services est nécessaire.</string>
+    <string name="dialog_download_play_services">Google Play</string>
+    <string name="dialog_close_program">Quitter</string>
+    <string name="findAddress">Chercher une adresse...</string>
+    <string name="title_activity_result">Résultats</string>
+    <string name="zoom_in">+</string>
+    <string name="zoom_out">-</string>
+    <string name="map_not_ready">La carte est en cours de chargement...</string>
+    <string name="lorem">Exsistit autem hoc loco quaedam quaestio subdifficilis, num quando amici novi, digni amicitia, veteribus sint anteponendi, ut equis vetulis teneros anteponere solemus. Indigna homine dubitatio! Non enim debent esse amicitiarum sicut aliarum rerum satietates; veterrima quaeque, ut ea vina, quae vetustatem ferunt, esse debet suavissima; verumque illud est, quod dicitur, multos modios salis simul edendos esse, ut amicitiae munus expletum sit.</string>
+
+
+    <!-- RESULT -->
+    <string name="filter">Filtrer</string>
+
+
+    <!--    Permissions    -->
+    <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
+    <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
+    <string name="permission_required_toast">Location permission is required for this demo.</string>
+
+
+    <!-- HOME ACTIVITY -->
+    <string name="choosePet">Quel animal avez-vous perdu ?</string>
+    <string name="defaultChoosePet">Selectionner votre animal</string>
+    <string name="btnLostMyPEt">Créer le signalement</string>
+    <string name="choosePetNoCo">Pour utiliser cette fonctionnalité vous devez vous connecter</string>
+    <string name="btnConnexion">Se Connecter</string>
+    <string name="choosePetNoPet">Pour déclarer un animal perdu vous devez tout d\'abord le créer.</string>
+    <string name="btnCreateAnimal">Créer un animal</string>
+    <string name="noPetSelect">Vous devez choisir un animal pour continuer</string>
+
+    <!-- SLIDE MENU -->
+    <string name="icon_home"><![CDATA[&#xf015;]]></string>
+    <string name="icon_paw"><![CDATA[&#xf1b0;]]></string>
+    <string name="icon_about"><![CDATA[&#xf05a;]]></string>
+    <string name="icon_settings"><![CDATA[&#xf085;]]></string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navdrawer_description_a11y">Navigation Drawer used to switch between major features of the application</string>
+
+    <string name="form_deleteanimal_confirm_button">Oui</string>
+    <string name="title_activity_activity_pet_detail">Détails de l\'animal</string>
+    <string name="title_activity_activity_add_pet">Enregister un animal</string>
+    <string name="signalements">signalement(s)</string>
+    <string name="pourrait_correspondre_a_votre_annonce">pourrait correpondre à votre annonce.</string>
+
+    <!-- ABOUT -->
+    <string name="aboutTitle">Pil\'Poil</string>
+    <string name="aboutText">Partages réseaux sociaux... / Envoi de commentaires...</string>
+    <string name="aboutCopyright">© 2016 - Pil\'Poil</string>
+    <string name="aboutVersion">Version 1.0.0</string>
+    <string name="namePetPlaceHolder">Quel est son nom ?</string>
+    <string name="form_animalTypePlaceholder">Type de l\'animal</string>
+    <string name="registerAnimalButton">Création</string>
+    <string name="action_modify_settings">Modifier les paramètres</string>
+    <string name="action_save_settings">Sauvegarder les paramètres</string>
+    <string name="title_activity_test_toast">TestToastActivity</string>
+    <string name="browse_title"><![CDATA[Videos by Your Company]]></string>
+    <string name="related_movies">Related Videos</string>
+    <string name="vertical_grid_title"><![CDATA[Vertical Video Grid]]></string>
+    <string name="error">Error</string>
+    <string name="ok">OK</string>
+    <string name="pause">Pause</string>
+    <string name="play">Play</string>
+    <string name="stop">Stop</string>
+    <string name="init_text">00:00</string>
+    <string name="play_pause_description">Play Pause Button</string>
+    <string name="loading">Loading&#8230;</string>
+    <string name="no_video_found">No video was found</string>
+    <string name="about_app">About DemoCast Player</string>
+    <string name="version">Version: %1$s</string>
+    <string name="popular_header">Popular Videos</string>
+    <string name="preferences">PREFERENCES</string>
+    <string name="grid_view">Grid View</string>
+    <string name="error_fragment">Error Fragment</string>
+    <string name="personal_settings">Personal Settings</string>
+    <string name="watch_trailer_1">Watch trailer</string>
+    <string name="watch_trailer_2">FREE</string>
+    <string name="rent_1">Rent By Day</string>
+    <string name="rent_2">From $1.99</string>
+    <string name="buy_1">Buy and Own</string>
+    <string name="buy_2">AT $9.99</string>
+    <string name="movie">Movie</string>
+    <string name="should_start">shouldStart</string>
+    <string name="start_position">startPosition</string>
+    <string name="search_results">Search Results</string>
+
+    <!-- Error messages -->
+    <string name="video_error_media_load_timeout">Media loading timed out</string>
+    <string name="video_error_server_inaccessible">Media server was not reachable</string>
+    <string name="video_error_unknown_error">Failed to load video</string>
+    <string name="error_fragment_message">An error occurred</string>
+    <string name="dismiss_error">Dismiss</string>
+    <string name="oops">Oops</string>
+
+    <!-- TEST -->
+    <string name="hint_firstname">Prénom</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_telephone">Téléphone</string>
+    <string name="btn_save">Enregistrer</string>
+    <string name="err_msg_name">Entrez votre nom</string>
+    <string name="err_msg_email">Entrez un email valide</string>
+    <string name="title_activity_new_profil">New profil</string>
+
+
+    <string name="accepteCGV">En créant mon compte j\'accèpte les conditions générales d\'utilisation.</string>
+
+    <string name="necessary_account">Le compte est nécessaire pour communiquer avec la personne qui trouvera votre animal.</string>
+
+    <string name="registration">Enregistrer</string>
+    <string name="title_activity_main_activity_test">MainActivityTest</string>
+
+    <string name="no_account_yet_create_one">Pas encore de compte ? Créez-en un</string>
+    <string name="showPassword">Afficher mot de passe</string>
+    <string name="signalAbus">Signaler un abus</string>
+    <string name="call">Appeler</string>
+    <string name="forgot_password">Mot de passe oublié ?</string>
+    <string name="openPicture">Ajout d\'une photo</string>
+    <string name="please_wait">Veuillez patienter ...</string>
+
+    <!-- ShowcaseView -->
+    <string name="i_got_it">OK</string>
+    <string name="close">Fermer</string>
+    <string name="tuto_title_tab_find">Signalez un animal trouvé</string>
+    <string name="tuto_title_tab_lost">Déclarez votre animal perdu</string>
+    <string name="tuto_tab_find">L\'onglet "Trouvé" vous permet de signaler un animal errant et ne nécessite aucune connexion.</string>
+    <string name="tuto_tab_lost">L\'onglet "Perdu" vous permet de déclarer la perte de votre animal. Une connexion rapide est nécessaire.</string>
+
+    <!-- AppIntro -->
+    <string name="intro">Tutoriel</string>
+    <string name="intro_innovant_title">Innovant</string>
+    <string name="intro_innovant_text">1ère application mobile française pour déclarer et retrouver son animal en temps réel.</string>
+    <string name="intro_intelligent_title">Intelligent</string>
+    <string name="intro_intelligent_text">Pil\'Poil a été réalisé pour tous les propriétaires d\'animaux de compagnie.</string>
+    <string name="intro_incontournable_title">Incontournable</string>
+    <string name="intro_incontournable_text">Vous ne vous en passerez plus. Pil\'Poil deviendra LE réflexe indispensable au bien être des animaux de compagnie et de leur maître.</string>
+    <string name="form_distance">Distance</string>
+
+</resources>

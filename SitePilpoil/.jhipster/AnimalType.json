@@ -1,0 +1,30 @@
+{
+  "relationships": [
+    {
+      "relationshipName": "animal",
+      "otherEntityName": "animal",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "animalType",
+      "relationshipId": 1
+    },
+    {
+      "relationshipName": "breed",
+      "otherEntityName": "breed",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "animalType",
+      "relationshipId": 2
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "label",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160414154141",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "entityTableName": "animal_type"
+}

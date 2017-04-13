@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/background_splash</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+  <style name="EditTextPilPoil" parent="android:Widget.EditText">
+	  <item name="android:background">@drawable/pilpoil_edit_text_holo_light</item>
+	  <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="AutoCompleteTextViewPilPoil" parent="android:Widget.AutoCompleteTextView">
+      <item name="android:dropDownSelector">@drawable/pilpoil_list_selector_holo_light</item>
+	  <item name="android:background">@drawable/pilpoil_edit_text_holo_light</item>
+	  <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="CheckBoxPilPoil" parent="android:Widget.CompoundButton.CheckBox">
+      <item name="android:button">@drawable/pilpoil_btn_check_holo_light</item>
+  </style>
+
+  <style name="RadioButtonPilPoil" parent="android:Widget.CompoundButton.RadioButton">
+      <item name="android:button">@drawable/pilpoil_btn_radio_holo_light</item>
+  </style>
+
+  <style name="ButtonPilPoil" parent="android:Widget.Button">
+	  <item name="android:background">@drawable/pilpoil_btn_default_holo_light</item>
+	  <item name="android:minHeight">48dip</item>
+	  <item name="android:minWidth">64dip</item>
+	  <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="ImageButtonPilPoil" parent="android:Widget.ImageButton">
+	  <item name="android:background">@drawable/pilpoil_btn_default_holo_light</item>
+  </style>
+
+  <style name="SpinnerPilPoil" parent="android:Widget.Spinner">
+      <item name="android:background">@drawable/pilpoil_spinner_background_holo_light</item>
+      <item name="android:dropDownSelector">@drawable/pilpoil_list_selector_holo_light</item>
+  </style>
+
+  <style name="SpinnerDropDownItemPilPoil" parent="android:Widget.DropDownItem.Spinner">
+      <item name="android:checkMark">@drawable/pilpoil_btn_radio_holo_light</item>
+  </style>
+  <style name="TabPilPoil">
+      <item name="android:gravity">center_horizontal</item>
+      <item name="android:paddingLeft">16dip</item>
+      <item name="android:paddingRight">16dip</item>
+      <item name="android:background">@drawable/pilpoil_tab_indicator_holo</item>
+      <item name="android:layout_width">0dip</item>
+      <item name="android:layout_weight">1</item>
+      <item name="android:minWidth">80dip</item>
+  </style>
+
+  <style name="TabTextPilPoil">
+	  <item name="android:textColor">#000000</item>
+      <item name="android:textSize">12sp</item>
+      <item name="android:textStyle">bold</item>
+      <!-- v14 <item name="android:textAllCaps">true</item> -->
+      <item name="android:ellipsize">marquee</item>
+      <item name="android:maxLines">2</item>
+      <item name="android:maxWidth">180dip</item>
+  </style>
+
+  <style name="ProgressBarPilPoil" parent="android:Widget.ProgressBar.Horizontal">
+      <item name="android:progressDrawable">@drawable/pilpoil_progress_horizontal_holo_light</item>
+      <item name="android:indeterminateDrawable">@drawable/pilpoil_progress_indeterminate_horizontal_holo_light</item>
+      <item name="android:minHeight">16dip</item>
+      <item name="android:maxHeight">16dip</item>
+  </style>
+
+  <style name="SeekBarPilPoil" parent="android:Widget.SeekBar">
+      <item name="android:progressDrawable">@drawable/pilpoil_scrubber_progress_horizontal_holo_light</item>
+      <item name="android:indeterminateDrawable">@drawable/pilpoil_scrubber_progress_horizontal_holo_light</item>
+      <item name="android:minHeight">13dip</item>
+      <item name="android:maxHeight">13dip</item>
+      <item name="android:thumb">@drawable/pilpoil_scrubber_control_selector_holo_light</item>
+      <item name="android:thumbOffset">16dip</item>
+      <item name="android:paddingLeft">16dip</item>
+      <item name="android:paddingRight">16dip</item>
+  </style>
+
+  <style name="RatingBarPilPoil" parent="android:Widget.RatingBar">
+      <item name="android:progressDrawable">@drawable/pilpoil_ratingbar_full_holo_light</item>
+      <item name="android:indeterminateDrawable">@drawable/pilpoil_ratingbar_full_holo_light</item>
+  </style>
+
+  <style name="RatingBarBigPilPoil" parent="android:Widget.RatingBar">
+      <item name="android:progressDrawable">@drawable/pilpoil_ratingbar_holo_light</item>
+      <item name="android:indeterminateDrawable">@drawable/pilpoil_ratingbar_holo_light</item>
+      <item name="android:minHeight">35dip</item>
+      <item name="android:maxHeight">35dip</item>
+  </style>
+
+  <style name="RatingBarSmallPilPoil" parent="android:Widget.RatingBar">
+      <item name="android:progressDrawable">@drawable/pilpoil_ratingbar_small_holo_light</item>
+      <item name="android:indeterminateDrawable">@drawable/pilpoil_ratingbar_small_holo_light</item>
+      <item name="android:minHeight">16dip</item>
+      <item name="android:maxHeight">16dip</item>
+  </style>
+
+  <style name="TogglePilPoil" parent="android:Widget.Button.Toggle">
+      <item name="android:background">@drawable/pilpoil_btn_toggle_holo_light</item>
+      <item name="android:minHeight">48dip</item>
+	  <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="ListViewPilPoil" parent="android:Widget.ListView">
+      <item name="android:listSelector">@drawable/pilpoil_list_selector_holo_light</item>
+  </style>
+
+  <style name="ListViewPilPoil.White" parent="android:Widget.ListView.White">
+      <item name="android:listSelector">@drawable/pilpoil_list_selector_holo_light</item>
+  </style>
+
+  <style name="SpinnerItemPilPoil" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+      <item name="android:textColor">#000000</item>
+  </style>
+
+    <style name="CustomShowcaseTheme" parent="ShowcaseView.Light">
+        <item name="sv_backgroundColor">@color/blackTransparent</item>
+        <item name="sv_showcaseColor">@color/colorPrimary</item>
+        <item name="sv_buttonText">@string/i_got_it</item>
+        <item name="sv_tintButtonColor">true</item>
+        <item name="sv_titleTextAppearance">@style/CustomShowcaseTitle</item>
+        <item name="sv_detailTextAppearance">@style/CustomShowcaseText</item>
+    </style>
+
+    <style name="CustomShowcaseTitle" parent="TextAppearance.ShowcaseView.Title">
+        <item name="android:textColor">@color/colorPrimaryLight</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="CustomShowcaseText" parent="TextAppearance.ShowcaseView.Title">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>

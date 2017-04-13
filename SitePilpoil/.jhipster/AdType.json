@@ -1,0 +1,23 @@
+{
+  "relationships": [
+    {
+      "relationshipName": "ad",
+      "otherEntityName": "ad",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "adType",
+      "relationshipId": 1
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "label",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160414154140",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "entityTableName": "ad_type"
+}

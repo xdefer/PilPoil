@@ -1,0 +1,521 @@
+ <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Activity.AdDetailsActivity"
+    tools:showIn="@layout/activity_ad_details"
+    android:id="@+id/activity_ad_details_container"
+    android:touchscreenBlocksFocus="true"
+    android:background="#ffffff">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp">
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layoutDisplay"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentEnd="false"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/chevron_left"
+                    android:id="@+id/imgViewPrev"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="center_vertical|left" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/imgViewPetPic"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_centerHorizontal="true"
+                    app:civ_border_color="@color/black"
+                    app:civ_border_width="2dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_radius="10"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/chevron_right"
+                    android:id="@+id/imgViewNext"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="false"
+                    android:layout_gravity="center_vertical|right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/activityLayout"
+                android:padding="15dp"
+                android:gravity="center"
+                android:layout_below="@+id/layoutDisplay"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/megaphone"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="@string/createAd"
+                        android:textSize="@dimen/fontSizeSmall"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:textSize="@dimen/fontSizeSmall"
+                        android:id="@+id/txtViewFindingDate"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/localisation"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:textSize="@dimen/fontSizeSmall"
+                        android:id="@+id/txtViewAdress"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:textSize="@dimen/fontSizeSmall"
+                        android:id="@+id/txtViewVille"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"/>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/form_age"
+                        android:textColor="#80000000"
+                        android:textSize="@dimen/customTitle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="#000000"
+                        android:id="@+id/animalAge"
+                        android:textSize="@dimen/customEntry" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="@string/form_breed"
+                        android:textColor="#80000000"
+                        android:textSize="@dimen/customTitle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:id="@+id/animalBreed"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/customEntry" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="@string/form_gender"
+                        android:textColor="#80000000"
+                        android:textSize="@dimen/customTitle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:id="@+id/animalGender"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/customEntry" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="@string/form_tatoo"
+                        android:textColor="#80000000"
+                        android:textSize="@dimen/customTitle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:id="@+id/animalTatoo"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/customEntry" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="@string/form_rescued"
+                        android:textColor="#80000000"
+                        android:textSize="@dimen/customTitle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:id="@+id/animalRescued"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/customEntry" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="@string/colors"
+                        android:textColor="#80000000"
+                        android:textSize="@dimen/customTitle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:id="@+id/animalColors"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/customEntry" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="@string/form_details"
+                        android:textColor="#80000000"
+                        android:textSize="@dimen/customTitle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:id="@+id/adPrecisions"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/customEntry" />
+
+                </LinearLayout>
+
+                <!--<LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:textSize="@dimen/fontSizeGeneral"
+                        android:text="@string/form_age"
+                        android:textStyle="bold"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:textSize="@dimen/fontSizeGeneral"
+                        android:id="@+id/animalAge"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:textSize="@dimen/fontSizeGeneral"
+                        android:text="@string/form_breed"
+                        android:textStyle="bold"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:textSize="@dimen/fontSizeGeneral"
+                        android:id="@+id/animalBreed"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:textSize="@dimen/fontSizeGeneral"
+                        android:text="@string/form_gender"
+                        android:textStyle="bold"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:textSize="@dimen/fontSizeGeneral"
+                        android:id="@+id/animalGender"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:textSize="@dimen/fontSizeGeneral"
+                        android:text="@string/form_tatoo"
+                        android:textStyle="bold"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:textSize="@dimen/fontSizeGeneral"
+                        android:id="@+id/animalTatoo"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:textSize="@dimen/fontSizeGeneral"
+                        android:text="@string/form_rescued"
+                        android:textStyle="bold"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:textSize="@dimen/fontSizeGeneral"
+                        android:id="@+id/animalRescued"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:textSize="@dimen/fontSizeGeneral"
+                        android:text="@string/colors"
+                        android:textStyle="bold"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:textSize="@dimen/fontSizeGeneral"
+                        android:id="@+id/animalColors"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:textSize="@dimen/fontSizeGeneral"
+                        android:text="@string/form_details"
+                        android:textStyle="bold"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/fontSizeGeneral"
+                        android:id="@+id/adPrecisions" />
+
+                </LinearLayout>-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:layout_marginBottom="20dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/warning"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:id="@+id/reportAd"
+                        android:text="@string/reportAd"
+                        android:textSize="@dimen/fontSizeSmall"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@color/black"
+            android:layout_gravity="center"
+            android:layout_centerVertical="true"
+            android:id="@+id/layoutActions">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_weight="0.5"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/phone"
+                    android:layout_gravity="center"
+                    android:id="@+id/phone"
+                    android:textSize="@dimen/fontSizeGeneral"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_weight="0.5"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/email"
+                    android:background="@drawable/email"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:textSize="@dimen/fontSizeGeneral"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

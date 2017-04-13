@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Arbitre</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="title_activity_activity_main">Choix du court</string>
+    <string name="btnSuivant">Suivant</string>
+    <string name="btnPrecedent">Précédent</string>
+    <string name="btnJouer">Jouer</string>
+    <string name="spinnerCourt">Court</string>
+    <string name="lblChoixCourt">Choisissez le court</string>
+    <string name="title_activity_choix_joueurs">Choix des Joueurs</string>
+    <string name="lblChoixJoueur">Choisissez les joueurs</string>
+    <string name="txtChoixJoueur1">Joueur 1</string>
+    <string name="txtChoixJoueur2">Joueur 2</string>
+    <string name="title_activity_jeu">Jeu</string>
+    <string name="action_pause">Pause</string>
+    <string name="txtRaison">Raison</string>
+    <string name="btnValider">Valider</string>
+    <string name="btnAnnulerPopUp">Annuler</string>
+    <string name="popUpWindowsFinMatch">Fin du match.</string>
+    <string name="popUpMatchExistantOK">Oui</string>
+    <string name="popUpMatchExistantKO">Non</string>
+    <string name="popUpMatchExistantTitle">Reprise de match</string>
+    <string name="popUpMatchExistantMessageP1">Le match</string>
+    <string name="popUpMatchExistantMessageP2">est suspendu pour raison: </string>
+    <string name="popUpMatchExistantMessageP3">Voulez-vous le reprendre ?</string>
+    <string name="title_activity_loading">LoadingActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>

@@ -1,0 +1,24 @@
+{
+    "pilpoilwebApp": {
+        "breed" : {
+            "home": {
+                "title": "Breeds",
+                "createLabel": "Create a new Breed",
+                "createOrEditLabel": "Create or edit a Breed",
+                "search": "Search for Breed"
+            },
+            "created": "A new Breed is created with identifier {{ param }}",
+            "updated": "A Breed is updated with identifier {{ param }}",
+            "deleted": "A Breed is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Breed {{ id }}?"
+            },
+            "detail": {
+                "title": "Breed"
+            },
+            "label": "Label",
+            "animal": "Animal",
+            "animalType": "AnimalType"
+        }
+    }
+}

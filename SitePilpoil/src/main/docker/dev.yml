@@ -1,0 +1,10 @@
+pilpoil-dev-postgresql:
+  container_name: pilpoil-dev-postgresql
+  image: postgres:9.4.5
+  # volumes:
+  #   - ~/volumes/jhipster/pilpoil/dev-postgresql/:/var/lib/postgresql/
+  environment:
+    - POSTGRES_USER=pilpoil
+    - POSTGRES_PASSWORD=
+  ports:
+    - "5432:5432"

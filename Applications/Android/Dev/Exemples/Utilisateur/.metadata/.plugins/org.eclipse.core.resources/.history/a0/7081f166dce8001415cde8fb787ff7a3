@@ -1,0 +1,80 @@
+package com.example.arbitre.models;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintStream;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.SocketAddress;
+import java.net.UnknownHostException;
+
+import android.os.AsyncTask;
+import android.util.Log;
+
+// Singleton
+public class ClientSocket{
+	
+	private static ClientSocket cs;
+	private static NetworkTask nt;
+	private String serverIP = "151.80.159.27";
+	private int serverPort = 6789;
+	private Socket socket;
+	private Thread thread;
+	
+	private ClientSocket()
+	{
+		//thread = new Thread(new ClientThread());
+		//thread.start();
+		socket = new Socket();
+		nt = new NetworkTask();
+		nt.setNsocket(socket);
+	}
+	
+	public static ClientSocket GetInstance(){
+		if(cs == null)
+			cs = new ClientSocket();
+		
+		return cs;
+	}	
+	
+	public void Execute(String message)
+	{
+		nt.execute(message);
+	}
+	
+	public void Close(){
+		nt.Close();
+	}
+	
+	// ACCESSORS
+
+	public String getServerIP() {
+		return serverIP;
+	}
+
+	public void setServerIP(String serverIP) {
+		this.serverIP = serverIP;
+	}
+
+	public int getServerPort() {
+		return serverPort;
+	}
+
+	public void setServerPort(int serverPort) {
+		this.serverPort = serverPort;
+	}
+
+	public Socket getSocket() {
+		return socket;
+	}
+
+	public void setSocket(Socket socket) {
+		this.socket = socket;
+	}
+}
+      

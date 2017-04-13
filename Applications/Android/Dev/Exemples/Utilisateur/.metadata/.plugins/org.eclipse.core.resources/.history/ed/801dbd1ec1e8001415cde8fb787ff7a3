@@ -1,0 +1,140 @@
+package com.example.arbitre.models;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintStream;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+import android.os.AsyncTask;
+
+// Singleton
+public class ClientSocket{
+	
+	private static ClientSocket cs;
+	private String serverIP = "151.80.159.27";
+	private int serverPort = 6789;
+	private Socket socket;
+	private Thread thread;
+	
+	private ClientSocket()
+	{
+		thread = new Thread(new ClientThread());
+		thread.start();
+	}
+	
+	public static ClientSocket GetInstance(){
+		if(cs == null)
+			cs = new ClientSocket();
+		
+		return cs;
+	}	
+	
+	/**
+	 * Ecriture sur le serveur
+	 * @param message le message a ecrire
+	 * la commande a passer
+	 */
+	public void Write(String message){
+		PrintStream out = null;
+		try {
+			out = new PrintStream(socket.getOutputStream(), true);
+			out.write(message.getBytes());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		finally{
+			//out.close();
+		}
+	}
+	
+	/**
+	 * Lecture depuis le server
+	 * @return le string lu.
+	 */
+	public String Read(){
+		String res = "";
+		InputStreamReader is = null;
+		BufferedReader in = null;
+		try {
+			is = new InputStreamReader(socket.getInputStream());
+			
+			in = new BufferedReader(is);
+	        
+			res = in.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		finally{
+			/*try {
+				is.close();
+				in.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}*/
+			
+		}
+		return res;
+	}
+	
+	/**
+	 * Fermeture du socket
+	 */
+	public void Close(){
+		try {
+			socket.close();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	// ACCESSORS
+
+	public String getServerIP() {
+		return serverIP;
+	}
+
+	public void setServerIP(String serverIP) {
+		this.serverIP = serverIP;
+	}
+
+	public int getServerPort() {
+		return serverPort;
+	}
+
+	public void setServerPort(int serverPort) {
+		this.serverPort = serverPort;
+	}
+
+	class ClientThread implements Runnable {
+	
+		@Override
+		public void run() {
+			try {
+				InetAddress serverAddr = InetAddress.getByName(serverIP);
+				socket = new Socket(serverAddr, serverPort);
+			} catch (UnknownHostException e1) {
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		}
+	}
+	
+	private class Connection extends AsyncTask<String, Void, String> {
+		 
+        @Override
+        protected String doInBackground(String... arg0) {
+            
+            return null;
+        }
+ 
+    }
+      
+}

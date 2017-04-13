@@ -1,0 +1,48 @@
+** Page d'accueil
+-- RAS
+
+
+** Page animal trouvé
+++ GetAllTypeAnimal()
+++ GetRaceByTypeAnimal(typeanimal.libelle)
+++ GetCouleurByTypeAnimal(typeanimal.id)
+++ GetUtilisateurByLoginMdp(email, mdp)
+++ InsertAnimal(…)
+++ InsertAnnonce(…)
+
+
+** Page connexion
+++ GetUtilisateurByLoginMdp(mail, mdp)
+++ CreateUtilisateur(prenom, telephone, mail, mdp)
+
+
+** Page animal perdu
+++ GetAllTypeAnimal()
+++ GetRaceByTypeAnimal(typeanimal.libelle)
+++ GetCouleurByTypeAnimal(typeanimal.id)
+++ InsertAnimal(…)
+++ InsertAnnonce(…)
+
+
+** Page annonces 
+// Filtres : Distance(1 à 50), date(aujourd'hui, cette semaine, …) // Heure peut être
+-- GetAnnonceByTypeAnimal(typeanimal.libelle)
+
+
+** Menu
+*** Profil
+++ UpdateProfil(prenom, telephone, distanceAlert)
+*** Connexion
+++ GetUtilisateurByLoginMdp(mail, mdp)
+// Penser à afficher un warning si compte pas actif
+*** Deconnexion
+?
+*** Mes annimaux
+++ GetAnimalByIdUtilisateur(utilisateur.id)
+**** Mon animal details
+++ GetAnimalById(animal.id)
+*** Mon animal perdu
+// Click sur warning qui ouvre un form
+// Update date à la fiche, Insert localisation + update Type_annonce
+++ InsertAnnoncePerdu(annonce)
+// Accès page recherche

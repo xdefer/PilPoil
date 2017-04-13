@@ -1,0 +1,297 @@
+{
+  "groups": [
+    {
+      "name": "jhipster",
+      "sourceType": "com.pilpoil.config.JHipsterProperties",
+      "type": "com.pilpoil.config.JHipsterProperties"
+    },
+    {
+      "name": "jhipster.async",
+      "sourceMethod": "getAsync()",
+      "sourceType": "com.pilpoil.config.JHipsterProperties",
+      "type": "com.pilpoil.config.JHipsterProperties$Async"
+    },
+    {
+      "name": "jhipster.cache",
+      "sourceMethod": "getCache()",
+      "sourceType": "com.pilpoil.config.JHipsterProperties",
+      "type": "com.pilpoil.config.JHipsterProperties$Cache"
+    },
+    {
+      "name": "jhipster.cache.ehcache",
+      "sourceMethod": "getEhcache()",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Cache",
+      "type": "com.pilpoil.config.JHipsterProperties$Cache$Ehcache"
+    },
+    {
+      "name": "jhipster.datasource",
+      "sourceMethod": "getDatasource()",
+      "sourceType": "com.pilpoil.config.JHipsterProperties",
+      "type": "com.pilpoil.config.JHipsterProperties$Datasource"
+    },
+    {
+      "name": "jhipster.http",
+      "sourceMethod": "getHttp()",
+      "sourceType": "com.pilpoil.config.JHipsterProperties",
+      "type": "com.pilpoil.config.JHipsterProperties$Http"
+    },
+    {
+      "name": "jhipster.http.cache",
+      "sourceMethod": "getCache()",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Http",
+      "type": "com.pilpoil.config.JHipsterProperties$Http$Cache"
+    },
+    {
+      "name": "jhipster.mail",
+      "sourceMethod": "getMail()",
+      "sourceType": "com.pilpoil.config.JHipsterProperties",
+      "type": "com.pilpoil.config.JHipsterProperties$Mail"
+    },
+    {
+      "name": "jhipster.metrics",
+      "sourceMethod": "getMetrics()",
+      "sourceType": "com.pilpoil.config.JHipsterProperties",
+      "type": "com.pilpoil.config.JHipsterProperties$Metrics"
+    },
+    {
+      "name": "jhipster.metrics.graphite",
+      "sourceMethod": "getGraphite()",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Metrics",
+      "type": "com.pilpoil.config.JHipsterProperties$Metrics$Graphite"
+    },
+    {
+      "name": "jhipster.metrics.jmx",
+      "sourceMethod": "getJmx()",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Metrics",
+      "type": "com.pilpoil.config.JHipsterProperties$Metrics$Jmx"
+    },
+    {
+      "name": "jhipster.metrics.spark",
+      "sourceMethod": "getSpark()",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Metrics",
+      "type": "com.pilpoil.config.JHipsterProperties$Metrics$Spark"
+    },
+    {
+      "name": "jhipster.security",
+      "sourceMethod": "getSecurity()",
+      "sourceType": "com.pilpoil.config.JHipsterProperties",
+      "type": "com.pilpoil.config.JHipsterProperties$Security"
+    },
+    {
+      "name": "jhipster.security.rememberme",
+      "sourceMethod": "getRememberme()",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Security",
+      "type": "com.pilpoil.config.JHipsterProperties$Security$Rememberme"
+    },
+    {
+      "name": "jhipster.swagger",
+      "sourceMethod": "getSwagger()",
+      "sourceType": "com.pilpoil.config.JHipsterProperties",
+      "type": "com.pilpoil.config.JHipsterProperties$Swagger"
+    }
+  ],
+  "properties": [
+    {
+      "defaultValue": 2,
+      "name": "jhipster.async.core-pool-size",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Async",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": 50,
+      "name": "jhipster.async.max-pool-size",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Async",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": 10000,
+      "name": "jhipster.async.queue-capacity",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Async",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": "16M",
+      "name": "jhipster.cache.ehcache.max-bytes-local-heap",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Cache$Ehcache",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": 3600,
+      "name": "jhipster.cache.time-to-live-seconds",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Cache",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": true,
+      "name": "jhipster.datasource.cache-prep-stmts",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Datasource",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": 250,
+      "name": "jhipster.datasource.prep-stmt-cache-size",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Datasource",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": 2048,
+      "name": "jhipster.datasource.prep-stmt-cache-sql-limit",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Datasource",
+      "type": "java.lang.Integer"
+    },
+    {
+      "name": "jhipster.datasource.server-name",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Datasource",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": true,
+      "name": "jhipster.datasource.use-server-prep-stmts",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Datasource",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": 31,
+      "name": "jhipster.http.cache.time-to-live-in-days",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Http$Cache",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": false,
+      "name": "jhipster.mail.auth",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Mail",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": "PilPoil@localhost",
+      "name": "jhipster.mail.from",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Mail",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": "localhost",
+      "name": "jhipster.mail.host",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Mail",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "jhipster.mail.password",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Mail",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": 25,
+      "name": "jhipster.mail.port",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Mail",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": "smtp",
+      "name": "jhipster.mail.protocol",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Mail",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": false,
+      "name": "jhipster.mail.tls",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Mail",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "name": "jhipster.mail.username",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Mail",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": false,
+      "name": "jhipster.metrics.graphite.enabled",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Metrics$Graphite",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": "localhost",
+      "name": "jhipster.metrics.graphite.host",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Metrics$Graphite",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": 2003,
+      "name": "jhipster.metrics.graphite.port",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Metrics$Graphite",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": "PilPoil",
+      "name": "jhipster.metrics.graphite.prefix",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Metrics$Graphite",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": true,
+      "name": "jhipster.metrics.jmx.enabled",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Metrics$Jmx",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": false,
+      "name": "jhipster.metrics.spark.enabled",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Metrics$Spark",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": "localhost",
+      "name": "jhipster.metrics.spark.host",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Metrics$Spark",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": 9999,
+      "name": "jhipster.metrics.spark.port",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Metrics$Spark",
+      "type": "java.lang.Integer"
+    },
+    {
+      "name": "jhipster.security.rememberme.key",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Security$Rememberme",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "jhipster.swagger.contact",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": "PilPoil API documentation",
+      "name": "jhipster.swagger.description",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "jhipster.swagger.license",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "jhipster.swagger.license-url",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "jhipster.swagger.terms-of-service-url",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": "PilPoil API",
+      "name": "jhipster.swagger.title",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": "0.0.1",
+      "name": "jhipster.swagger.version",
+      "sourceType": "com.pilpoil.config.JHipsterProperties$Swagger",
+      "type": "java.lang.String"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+    "pilpoilwebApp": {
+        "adType" : {
+            "home": {
+                "title": "AdTypes",
+                "createLabel": "Créer un nouveau AdType",
+                "createOrEditLabel": "Créer ou éditer un AdType",
+                "search": "Search for AdType"
+            },
+            "created": "Un nouveau AdType a été créé avec l'identifiant {{ param }}",
+            "updated": "Le AdType avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le AdType avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le AdType {{ id }} ?"
+            },
+            "detail": {
+                "title": "AdType"
+            },
+            "label": "Label",
+            "ad": "Ad"
+        }
+    }
+}
+

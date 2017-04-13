@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="Yanick (generated)" id="1445970192564-1">
+      <createTable tableName="couleur">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="couleurPK"/>
+         </column>
+         <column name="libelle" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Yanick (generated)" id="1445970192564-2">
+      <createTable tableName="couleur_type_animals">
+         <column name="couleurs_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="type_animalss_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="Yanick (generated)" id="1445970192564-3">
+      <createTable tableName="type_annonce">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="type_annoncePK"/>
+         </column>
+         <column name="libelle" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Yanick (generated)" id="1445970192564-4">
+      <addColumn tableName="utilisateur">
+         <column name="actif" type="bit"/>
+      </addColumn>
+   </changeSet>
+   
+   <changeSet author="Yanick (generated)" id="1445970192564-17">
+      <addPrimaryKey columnNames="couleurs_id, type_animalss_id"
+                     tableName="couleur_type_animals"/>
+   </changeSet>
+   <changeSet author="Yanick (generated)" id="1445970192564-18">
+      <addForeignKeyConstraint baseColumnNames="couleurs_id"
+                               baseTableName="couleur_type_animals"
+                               constraintName="FK_4hsujwkkei5ulud3wiu1ru17e"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="couleur"/>
+   </changeSet>
+   
+   <changeSet author="Yanick (generated)" id="1445970192564-21">
+      <addForeignKeyConstraint baseColumnNames="type_animalss_id"
+                               baseTableName="couleur_type_animals"
+                               constraintName="FK_oo0r79wknygutbvthk5n5s9bm"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="type_animal"/>
+   </changeSet>
+   
+   <changeSet author="Yanick (generated)" id="1445970192564-24">
+      <dropColumn columnName="code" tableName="race"/>
+   </changeSet>
+   <changeSet author="Yanick (generated)" id="1445970192564-25">
+      <dropColumn columnName="code" tableName="type_animal"/>
+   </changeSet>
+</databaseChangeLog>

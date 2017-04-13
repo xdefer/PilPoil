@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="#{email.adReport.title}">PilPoil, AdReport</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <span th:text="#{email.adReport.text1}">The following ad, id = </span><span th:text="|${ad.id}|"></span> <span th:text="#{email.adReport.text2}">has been report by the user, id = </span><span th:text="|${user.id}|"></span> <span th:text="#{email.adReport.text3}">for the reason : </span><span th:text="|${theme}|"></span>
+        
+    </body>
+</html>

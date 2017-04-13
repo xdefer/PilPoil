@@ -1,0 +1,165 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.FoundFragment">
+
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:id="@+id/layoutFoundDog"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:alpha="0.8"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:elevation="2dp">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/avatarDog"
+                android:layout_gravity="center_vertical"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                app:civ_border_color="@color/black"
+                app:civ_border_width="2dp"
+                app:civ_shadow="true"
+                app:civ_shadow_radius="10"
+                android:src="@drawable/dog_icon" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/dog"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                    android:id="@+id/imgViewDog"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="false"
+                    android:layout_gravity="center_vertical|right"
+                    android:gravity="center_vertical" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutFoundCat"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:alpha="0.8"
+            android:layout_marginBottom="20dp"
+            android:elevation="2dp">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/avatarCat"
+                android:layout_gravity="center_vertical"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                app:civ_border_color="@color/black"
+                app:civ_border_width="2dp"
+                app:civ_shadow="true"
+                app:civ_shadow_radius="10"
+                android:src="@drawable/cat_icon" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/cat"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                    android:id="@+id/imgViewCat"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="false"
+                    android:layout_gravity="center_vertical|right"
+                    android:gravity="center_vertical" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutFoundOther"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:alpha="0.8"
+            android:layout_marginBottom="10dp"
+            android:elevation="2dp">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/avatarOther"
+                android:layout_gravity="center_vertical"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                app:civ_border_color="@color/black"
+                app:civ_border_width="2dp"
+                app:civ_shadow="true"
+                app:civ_shadow_radius="10"
+                android:src="@drawable/other_icon" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/others"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                    android:id="@+id/imgViewOthers"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="false"
+                    android:layout_gravity="center_vertical|right"
+                    android:gravity="center_vertical" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

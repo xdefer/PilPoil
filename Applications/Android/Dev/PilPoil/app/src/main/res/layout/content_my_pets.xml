@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Activity.MyPetsActivity"
+    tools:showIn="@layout/activity_my_pets"
+    android:id="@+id/activity_my_pets_container">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layoutLoader">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </ProgressBar>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/petList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:choiceMode="singleChoice"
+            android:background="#eee"
+            android:padding="10dp"
+            android:divider="@null"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/noAnimalFoundText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aucun animal n'a été enregistré"
+                android:textSize="20sp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center">
+            </TextView>
+
+            <Button
+                android:id="@+id/addAnimalButtonFirst"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:text="Ajouter un premier animal"
+                android:textColor="#FFF"
+                android:textSize="20sp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:background="?attr/colorPrimary">
+            </Button>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

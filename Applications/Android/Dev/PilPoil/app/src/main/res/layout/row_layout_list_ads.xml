@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:visibility="gone"
+        android:id="@+id/txtViewIdListAds" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/trouve_le"
+        android:id="@+id/txtViewTrouveLe"
+        android:gravity="start"
+        android:textSize="@dimen/fontSizeGeneral" />
+
+    <TextView
+        android:id="@+id/txtViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="10"
+        android:gravity="start" />
+
+    <TextView
+        android:id="@+id/txtViewA"
+        android:text="@string/a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="10"
+        android:gravity="start" />
+
+    <TextView
+        android:id="@+id/txtViewDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="10"
+        android:gravity="start" />
+
+    <TextView
+        android:id="@+id/TxtViewMetre"
+        android:text="@string/km"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="10"
+        android:gravity="start" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="!"
+            android:layout_alignParentRight="true"
+            android:onClick="viewAd"
+            android:clickable="true"
+            android:id="@+id/btnViewAd" />
+
+    </RelativeLayout>
+
+</LinearLayout>

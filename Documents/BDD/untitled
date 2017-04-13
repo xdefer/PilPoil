@@ -1,0 +1,12 @@
+INSERT INTO `animal` (`id`, `name`, `age`, `sexe`, `tatoo`, `chip`, `photo`, `colors`, `animal_type_id`, `breed_id`, `user_id`) VALUES
+(1, 'Lumia', 'Jeune', 'Male', 'TATOO123ED', NULL, 'http://static.wamiz.fr/images/news/medium/chat-tabby.jpg', 'tirgé noir', 1, 13, ),
+(2, 'Gollum', 'Adulte', 'Male', 'TATOO145TG', NULL, NULL, 3, 1, 8),
+(3, 'Chatchat', 'Adulte', 'Femelle', 'TATOO156TY', NULL, 'http://fr.cdn.v5.futura-sciences.com/sources/images/dossier/rte/magic/4111_je_siamois.jpg', 3, 1, 8),
+(4, 'Poisson', '', NULL, NULL, NULL, NULL, NULL, 3, 8),
+(5, 'ChienChien', 'Adulte', 'Male', NULL, NULL, 'http://static.wamiz.fr/images/news/additional/2013-05/large/berger-australien-choix-race-chien.jpg', 14, 2, 6),
+(6, 'LeChat', NULL, NULL, NULL, NULL, NULL, NULL, 1, 7),
+(7, 'LeChien', NULL, NULL, NULL, NULL, NULL, NULL, 2, 7),
+(8, NULL, NULL, 'Femelle', NULL, NULL, 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Chronos_4_mois.jpg/220px-Chronos_4_mois.jpg', 3, 1, NULL),
+(9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL),
+(10, NULL, 'Jeune', 'Male', NULL, NULL, NULL, 6, 1, NULL),
+(11, NULL, 'Adulte', 'Male', 'TATEE125ED', NULL, 'http://www.chatsnoirs.com/medias/images/europeen-noir.jpg', NULL, 1, NULL);

@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '23.0.2'
+
+    defaultConfig {
+        applicationId "com.project.app.pilpoil"
+        minSdkVersion 18
+        targetSdkVersion 23
+        versionCode 1
+        versionName "0.1.0"
+    }
+    signingConfigs{
+        release{
+            storeFile file(project.file("keystore_pilpoil.jks"))
+            storePassword "pilpoilI433"
+            keyAlias "PilPoil"
+            keyPassword "pilpoilI433"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            debuggable true
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.robolectric:robolectric:3.0'
+    // Circular ImgView
+    // Google Map
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    //compile 'com.google.android.gms:play-services:8.4.0'
+    // API
+    // Upload Img
+    // Design
+    // (v4.5)
+    // FB
+    // Material Design
+    compile 'com.mikhaellopez:circularimageview:3.0.1'
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.google.android.gms:play-services-maps:8.4.0'
+    compile 'com.google.android.gms:play-services-location:8.4.0'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'com.squareup.okhttp3:okhttp:3.1.2'
+    compile 'com.cloudinary:cloudinary-android:1.1.2'
+    compile 'com.android.support:recyclerview-v7:23.2.1'
+    compile 'com.joanzapata.iconify:android-iconify-fontawesome:2.1.1'
+    compile 'com.daimajia.swipelayout:library:1.2.0@aar'
+    compile 'com.facebook.android:facebook-android-sdk:4.+'
+    compile 'com.android.support:design:23.2.1'
+    compile 'com.github.bumptech.glide:glide:3.4.+'
+    // Material Design
+    //compile 'com.android.support:design:23.1.1'
+    // Download img
+    compile 'com.squareup.picasso:picasso:2.5.0'
+    //SeekBar
+    compile 'org.adw.library:discrete-seekbar:1.0.1'
+
+    compile 'com.afollestad.material-dialogs:core:0.8.5.9'
+    //compile 'com.afollestad.material-dialogs:commons:0.8.5.9'
+    // ShowCaseView => Tutorial
+    compile 'com.github.amlcurran.showcaseview:library:5.4.3'
+    // AppIntro Tutorial
+    compile 'com.github.paolorotolo:appintro:4.0.0'
+}

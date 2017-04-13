@@ -1,0 +1,5 @@
+INDEX VERSION 1.126+/media/spectrodt/OS_Install/Users/SpectroDT/Documents/EPSI/Prog/EPSICommun/projetmention/Dev/Utilisateur/.metadata/.plugins/org.eclipse.jdt.core
+4038061689.index
+1177772711.index
+1465926155.index
+924299039.index

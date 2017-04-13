@@ -1,0 +1,49 @@
+********** Génération avec Jhipster -Etape 1- **********
+
+/!\ Lancer l'inviter de commande en administrateur
+== yo jhipster (Commande à réaliser dans le dossier où générer l'application)
+
+// Réponses aux questions de génération
+=== 1/ Name : PilPoil
+=== 2/ Package : com.pilpoil
+=== 3/ Use Java 8
+=== 4/ Authentication : HTTP Session Auth
+=== 5/ DB : SQL
+=== 6/ DB Prod : MySQL
+=== 7/ DB Dev : MySQL
+=== 8/ Hibernate 2nd level cache : Yes : Ehcache
+=== 9/ Search engine : No
+=== 10/ Clustered HTTP Session : No
+=== 11/ WebSockets : No
+=== 12/ Maven
+=== 13/ Grunt
+=== 14/ LibSass CSS : No
+=== 15/ Translation support : Yes
+
+== Modifier les fichiers Config pour l'accès à la BDD (Ajouter le mdp et le nom de la base)
+=== \src\main\resources\config\application-dev.yml
+=== \src\main\resources\config\application-prod.yml
+
+== Modifier le pom.xml en ajoutant le mdp pour Liquibase dans la balise mdp
+
+== Créer la BDD sous PhpMyAdmin
+=== Nom : Nom_fichier_config
+=== Interclassement : utf8_unicode_ci
+
+== Lancer la commande : mvn spring-boot:run (Ctrl + C pour quitter)
+Vérifier que l'application se déploie normalement sur le port local 8080
+
+
+********** Génération avec Jhipster -Etape 2- **********
+
+/!\ Lancer l'inviter de commande en administrateur
+== npm install -g jhipster-uml
+
+== Modifier/Créer l'UML via Eclipse UML Designer
+
+== jhipster-uml chemin_monUml.uml
+=== Selectionner UMLDesigner
+
+== mvn test
+
+== mvn spring-boot:run

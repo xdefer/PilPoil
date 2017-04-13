@@ -1,0 +1,84 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "adType",
+      "otherEntityName": "adType",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "animal",
+      "otherEntityName": "animal",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "recover",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "date",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "phone",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "adress",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "complement",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "postalCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "city",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 10,
+      "fieldName": "country",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 11,
+      "fieldName": "longitude",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 12,
+      "fieldName": "lattitude",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20151211215522",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no"
+}

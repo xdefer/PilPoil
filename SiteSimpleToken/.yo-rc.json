@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "pilpoilweb",
+    "packageName": "com.pilpoilwebapp",
+    "packageFolder": "com/pilpoilwebapp",
+    "authenticationType": "xauth",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": true,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "ac63daa47cc5c9731ed56b2020b718caf028434c",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}
