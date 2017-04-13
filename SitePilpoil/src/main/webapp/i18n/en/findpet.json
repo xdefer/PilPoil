@@ -1,0 +1,57 @@
+{
+    "findpet": {
+        "title": "I have found a pet",
+        "formSave": {
+        	"save": "Send",
+        	"required": "Required fields",
+        	"noRequired": "Optional fields",
+        	"photo": "Photo",
+        	"photoHelp": "Paste the link of a hosted picture",
+        	"nameRequired": "Name *",
+        	"animalTypeRequired": "Animal type *",
+        	"breed": "Breed ",
+        	"age": "Age",
+        	"sexe": "Gender",
+        	"chip": "Chip",
+        	"tattoo": "Tattoo",
+        	"colors": "Color(s)",
+        	"location": "Found at *",
+        	"date": "Was found the *",
+        	"rescued": "Animal recovered",
+        	"rescuedY": "Yes",
+        	"rescuedN": "No",
+        	"precision": "Precision",
+        	"tel": "Phone",
+        	"mail": "Email"
+       	},
+       	"genderList": {
+	   		"Male": "Male",
+       		"Femelle": "Female"
+       	},
+       	"ageList": {
+	   		"Jeune": "Young",
+       		"Adulte": "Adult"
+       	},
+       	"breedList" : {
+        	"Berger Allemand": "German shepherd",
+        	"Carlin" : "Pug",
+        	"Golden Retriever" : "Golden Retriever",
+        	"Cavalier King Charles" : "Cavalier King Charles",
+        	"Akita Inu" : "Akita Inu",
+        	"Siamois" : "Siamese",
+        	"Bengal" : "Bengal",
+        	"Sacré de Birmanie" : "Birman",
+        	"Maine coon" : "Maine coon",
+        	"Persan" : "Persian",
+        	"Norvégien" : "Norwegian",
+        	"Européen" : "European"
+        },
+        "animalTypeList": {
+        	"Chien": "Dog",
+        	"Chat": "Cat",
+        	"Poisson": "Fish",
+        	"Lapin": "Rabbit",
+        	"Autre": "Other"
+        }
+    }
+}

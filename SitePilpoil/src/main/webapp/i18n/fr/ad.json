@@ -7,7 +7,7 @@
                 "createOrEditLabel": "Créer ou éditer un Ad",
                 "search": "Search for Ad"
             },
-            "created": "Un nouveau Ad a été créé avec l'identifiant {{ param }}",
+            "created": "Votre signalement a été enregistré",
             "updated": "Le Ad avec l'identifiant {{ param }} a été mis à jour",
             "deleted": "Le Ad avec l'identifiant {{ param }} a été supprimé",
             "delete": {

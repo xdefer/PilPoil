@@ -6,7 +6,6 @@ angular.module('pilpoilApp')
             restrict: 'A',
             link: function (scope, element, attrs) {
                 var language = attrs.activeMenu;
-
                 scope.$watch(function() {
                     return $translate.use();
                 }, function(selectedLanguage) {

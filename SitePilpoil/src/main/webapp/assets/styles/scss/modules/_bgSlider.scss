@@ -1,0 +1,31 @@
+#bgSlider {
+    display: block;
+    @include pos(0,0,0,0);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: find-value($mblue-grey,"lighten-5");
+
+    .slick-track,
+    .slick-list {
+        height: 100%;
+    }
+
+
+    .item {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: no-repeat center;
+        background-size: cover;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        @include pos(0,0,0,0);
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+    }
+}

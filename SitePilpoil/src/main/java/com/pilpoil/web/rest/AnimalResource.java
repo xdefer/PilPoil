@@ -1,6 +1,7 @@
 package com.pilpoil.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.pilpoil.domain.Ad;
 import com.pilpoil.domain.Animal;
 import com.pilpoil.repository.AnimalRepository;
 import com.pilpoil.web.rest.util.HeaderUtil;
@@ -52,7 +53,6 @@ public class AnimalResource {
         }
         Animal result = animalRepository.save(animal);
         return ResponseEntity.created(new URI("/api/animals/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert("animal", result.getId().toString()))
             .body(result);
     }
 
@@ -141,6 +141,12 @@ public class AnimalResource {
     @Timed
     public ResponseEntity<Void> deleteAnimal(@PathVariable Long id) {
         log.debug("REST request to delete Animal : {}", id);
+        List<Ad> ads = adRepository.findByAnimalId(id);
+        if(!ads.isEmpty()){
+        	for(Ad ad: ads){
+        		adRepository.delete(ad.getId());
+        	}
+        }
         animalRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("animal", id.toString())).build();
     }

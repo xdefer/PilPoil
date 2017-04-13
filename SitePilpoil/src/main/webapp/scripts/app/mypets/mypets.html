@@ -1,0 +1,583 @@
+<!-- <div ng-cloak class="col-xs-12">
+	
+	ListView
+	<div ng-class="{false:'col-xs-12', true:'col-xs-5'}[pageState.viewMode || pageState.editMode || pageState.createMode]">
+	    
+	    IF PET
+	    <div style="margin-top:50px;" ng-if="myPets.length > 0" class="list-group">
+	    
+	    	Loop on petList
+		    <div style="margin-top:10px;;" ng-repeat="pet in myPets | orderBy: 'name'" class="list-group-item">
+		    
+		    	Pet IMG
+	    		<div class="row-picture" ng-click="displayPetDetails(pet)">
+	    			Pet with photo
+				    <img ng-if="pet.photo" ng-src="{{pet.photo}}" alt="Pet picture" class="circle">
+				    No photo : Cat
+		    	    <img style="background-color: black;" ng-if="!pet.photo && pet.animalType.label == 'Chat'" src="http://img15.hostingpics.net/pics/818865caticon.png" alt="Cat picture" class="circle">
+			        No photo : Dog
+			        <img style="background-color: black;" ng-if="!pet.photo && pet.animalType.label == 'Chien'" src="http://img15.hostingpics.net/pics/765245dogicon.png" alt="Dog picture" class="circle">
+			        No photo : Other
+				    <img style="background-color: black;" ng-if="!pet.photo && pet.animalType.label != 'Chien' && pet.animalType.label != 'Chat'" src="http://img15.hostingpics.net/pics/626082othericon.png" alt="Other picture" class="circle">
+				</div>  
+				
+				Card Content
+				<div class="row-content" style="min-height:0;">
+					Pet Name on Title
+		    		<h4 class="list-group-item-heading" style="font-weight: bold; color: #009688;">{{pet.name}}</h4>
+					Pet with breed label and color
+			        <p class="list-group-item-text" ng-if="pet.breed.label && pet.animalType.label"> 
+			        	<span translate="mypets.animalTypeList.{{pet.animalType.label}}"></span>,
+			        	<span translate="mypets.formSave.breed"></span> 
+			        	<span translate="mypets.breedList.{{pet.breed.label}}"></span>
+			        </p>
+			        Pet without breed label but colors
+			        <p class="list-group-item-text" ng-if="!pet.breed.label && pet.animalType.label">
+			        	<span translate="mypets.animalTypeList.{{pet.animalType.label}}"></span>
+			        </p>
+		    	</div>
+		    	
+		    	Icon >
+		    	<span style="float:right; margin-top: 25px;" class="glyphicon glyphicon-menu-right" ng-click="displayPetDetails(pet)"></span>
+		    	<div class="list-group-separator"></div>
+	  		</div> 
+	  		
+	  		Floating btn
+	  		<a ng-click="createNewPet()" class="btn btn-primary btn-fab" style="margin-top:50px; float:right"><i class="material-icons">add</i></a>
+		</div>
+		
+		ELSE NO PET
+		<div style="margin-top:100px; text-align: center;" ng-if="!myPets.length > 0" class="list-group">
+			<p translate="mypets.noPet"></p>
+			<a ng-click="createNewPet()" class="btn btn-raised btn-primary" translate="mypets.createNew"></a>
+		</div>
+	</div>
+	
+	Right Part
+    <div ng-show="pageState.viewMode || pageState.editMode || pageState.createMode" class="col-xs-7">
+    	
+    	Cancel View btn
+    	<div style="display: inline-block; float:right" title="{{'mypets.close'|translate}}">
+    		 <button style="color:white; margin-right: 5px;" type="button" class="close" ng-click="closeView()">&times;</button>
+    	</div>
+    	
+  		Pet IMG -- VIEW MODE
+    	<div class="row-picture" style="background-color:#009688; padding-top: 25px; padding-bottom: 25px;" ng-if="pageState.viewMode">
+	    	Pet with photo
+		    <img ng-if="pageState.currentPet.photo" ng-src="{{pageState.currentPet.photo}}" alt="Cat picture" 
+		    	class="circle" style="display: block; margin: 0 auto; width:25%; heigth:25%; border-radius:100%;">
+	        No photo : Cat
+	        <img ng-if="!pageState.currentPet.photo && pageState.currentPet.animalType.label == 'Chat'" src="http://img15.hostingpics.net/pics/818865caticon.png" alt="chat" 
+	        	class="circle" style="background-color: black; display: block; margin: 0 auto; width:25%; heigth:25%; border-radius:100%;">
+	        No photo : Dog
+		    <img ng-if="!pageState.currentPet.photo && pageState.currentPet.animalType.label == 'Chien'" src="http://img15.hostingpics.net/pics/765245dogicon.png" alt="chat" 
+		    	class="circle" style="background-color: black; display: block; margin: 0 auto; width:25%; heigth:25%; border-radius:100%;">
+		    No photo : Other
+		    <img ng-if="!pageState.currentPet.photo && pageState.currentPet.animalType.label != 'Chien' && pageState.currentPet.animalType.label != 'Chat'" src="http://img15.hostingpics.net/pics/626082othericon.png" alt="chat" 
+		    	class="circle" style="background-color: black; display: block; margin: 0 auto; width:25%; heigth:25%; border-radius:100%;">
+	    </div>
+				    
+	    Animal -- VIEW MODE
+	    <div ng-if="pageState.viewMode" style="background-color:white; border:1px solid #e0e0e0;" class="col-xs-12">
+	    	
+	    	Floating menu
+		   	<div style="display:flex;margin-top:-20px;"class="btn-group-sm">
+		   		<a ui-sref="mypets.delete({id : pageState.currentPet.id})" class="btn btn-danger btn-fab" title="{{'mypets.delete'|translate}}"><i class="material-icons">delete</i></a>
+		  	  	<a ng-click="editView(pageState.currentPet.id)" class="btn btn-info btn-fab" title="{{'mypets.edit'|translate}}"><i class="material-icons">edit</i></a>
+			  	<a ng-show="!petIsLost" ng-click="petLost(pageState.currentPet.id)" class="btn btn-warning btn-fab" title="{{'mypets.lost'|translate}}"><i class="material-icons">warning</i></a>
+			  	<a ng-show="petIsLost" ng-click="petFind(pageState.currentPet.id)" class="btn btn-success btn-fab" title="{{'mypets.recover'|translate}}" ><i class="material-icons">home</i></a>
+			</div>
+		
+	    	Name
+	    	<div class="form-group">
+	    		<span translate="mypets.form.name"></span>
+	    		<span ng-if="pageState.currentPet.name" style="font-weight: bold; color: #009688;">{{pageState.currentPet.name}}</span>
+	        </div>
+	        
+	        AnimalType
+	    	<div class="form-group">
+	    		<span translate="mypets.form.animalType"></span>
+	    		<span style="font-weight: bold; color: #009688;" ng-if="pageState.currentPet.animalType" translate="mypets.animalTypeList.{{pageState.currentPet.animalType.label}}"></span>
+	        </div>
+	        
+	        Breed
+	    	<div class="form-group">
+	    		<span translate="mypets.form.breed"></span>
+	    		<span ng-if="!pageState.currentPet.breed" translate="mypets.form.naF" style="font-style : italic;"></span>
+	    		<span ng-if="pageState.currentPet.breed" style="font-weight: bold; color: #009688;" translate="mypets.breedList.{{pageState.currentPet.breed.label}}"></span>
+	        </div>
+	        
+	        Age
+	    	<div class="form-group">
+	    		<span translate="mypets.form.age"></span>
+	    		<span ng-if="!pageState.currentPet.age || pageState.currentPet.age == ''" translate="mypets.form.naM" style="font-style : italic;"></span>
+	    		<span ng-if="pageState.currentPet.age && !pageState.currentPet.age == ''" style="font-weight: bold; color: #009688;" translate="mypets.ageList.{{pageState.currentPet.age}}"></span>
+	        </div>
+	        
+	        Sexe
+	    	<div class="form-group">
+	    		<span translate="mypets.form.sexe"></span>
+	    		<span ng-if="!pageState.currentPet.sexe || pageState.currentPet.sexe == ''" translate="mypets.form.naM" style="font-style : italic;"></span>
+	    		<span ng-if="pageState.currentPet.sexe && !pageState.currentPet.sexe == ''" style="font-weight: bold; color: #009688;" translate="mypets.genderList.{{pageState.currentPet.sexe}}"></span>
+	        </div>
+	        
+	        Chip
+	    	<div class="form-group">
+	    		<span translate="mypets.form.chip"></span>
+	    		<span ng-if="!pageState.currentPet.chip || pageState.currentPet.chip == ''" translate="mypets.form.naF" style="font-style : italic;"></span>
+	    		<span ng-if="pageState.currentPet.chip && !pageState.currentPet.chip == ''" style="font-weight: bold; color: #009688;">{{pageState.currentPet.chip}}</span>
+	        </div>
+	        
+	        Tattoo
+	    	<div class="form-group">
+	    		<span translate="mypets.form.tattoo"></span>
+	    		<span ng-if="!pageState.currentPet.tatoo || pageState.currentPet.tatoo == ''" translate="mypets.form.naM" style="font-style : italic;"></span>
+	    		<span ng-if="pageState.currentPet.tatoo && !pageState.currentPet.tatoo == ''" style="font-weight: bold; color: #009688;">{{pageState.currentPet.tatoo}}</span>
+	        </div>
+	        
+	        Color(s)
+	    	<div class="form-group">
+	    		<span translate="mypets.form.colors"></span>
+	    		<span ng-if="!pageState.currentPet.colors || pageState.currentPet.colors == ''" translate="mypets.form.naF" style="font-style : italic;"></span>
+	    		<span ng-if="pageState.currentPet.colors && !pageState.currentPet.colors == ''" style="font-weight: bold; color: #009688;">{{pageState.currentPet.colors}}</span>
+	        </div>
+		</div>
+		
+		Pet IMG -- CREATE or EDIT MODE
+		<div style="background-color:#009688;  padding-top: 25px; padding-bottom: 25px;" ng-if="pageState.editMode || pageState.createMode">
+	    	Pet with photo
+		    <img ng-if="pageState.currentPetSaveEdit.photo" ng-src="{{pageState.currentPetSaveEdit.photo}}" alt="Pet picture" 
+		    	class="circle" style="display: block; margin: 0 auto; width:25%; heigth:25%; border-radius:100%;">
+	        No photo : Cat
+	        <img ng-if="!pageState.currentPetSaveEdit.photo && pageState.currentPetSaveEdit.animalType.label == 'Chat'" src="http://img15.hostingpics.net/pics/818865caticon.png" alt="Cat picture" 
+	        	class="circle" style="background-color: black; display: block; margin: 0 auto; width:25%; heigth:25%; border-radius:100%;">
+	        No photo : Dog
+		    <img ng-if="!pageState.currentPetSaveEdit.photo && pageState.currentPetSaveEdit.animalType.label == 'Chien'" src="http://img15.hostingpics.net/pics/765245dogicon.png" alt="Dog picture" 
+		    	class="circle" style="background-color: black; display: block; margin: 0 auto; width:25%; heigth:25%; border-radius:100%;">
+		    No photo : Other
+		    <img ng-if="!pageState.currentPetSaveEdit.photo && pageState.currentPetSaveEdit.animalType.label != 'Chien' && pageState.currentPetSaveEdit.animalType.label != 'Chat'" src="http://img15.hostingpics.net/pics/626082othericon.png" alt="Other picture" 
+		    	class="circle" style="background-color: black; display: block; margin: 0 auto; width:25%; heigth:25%; border-radius:100%;">
+	    </div>
+	    
+	    Pet Form -- CREATE or EDIT MODE
+		<div ng-if="pageState.editMode || pageState.createMode" style="background-color:white; border:1px solid #e0e0e0;">
+			
+			Floating menu
+		   	<div  style="display:flex;margin-top:-20px;"class="btn-group-sm">
+		   		<a ng-if="pageState.createMode" ng-click="closeView()"  class="btn btn-default btn-fab" title="{{'mypets.cancel'|translate}}"><i class="material-icons">clear</i></a>
+		   		<a ng-if="pageState.editMode" ng-click="backToView()"  class="btn btn-default btn-fab" title="{{'mypets.cancel'|translate}}"><i class="material-icons">clear</i></a>
+		  	  	<a ng-click="!saveForm.$valid || savePet(pageState.currentPetSaveEdit)" class="btn btn-success btn-fab" title="{{'mypets.save'|translate}}"><i class="material-icons">done</i></a>
+			</div>
+			
+			Form
+			<form novalidate class="form-group" name="saveForm" style="padding-left: 20px; padding-right: 20px;">
+				
+				Photo
+				<div class="form-group label-floating">
+				  	<label class="control-label" for="image" translate="mypets.formSave.photo"></label>
+				  	<input class="form-control" maxlength="500" id="image" type="text" ng-model="pageState.currentPetSaveEdit.photo">
+				  	<p class="help-block" translate="mypets.formSave.photoHelp"></p>
+				</div>
+				
+				Name Required
+				<div class="form-group label-floating" ng-class="{'has-error' : saveForm.name.$error && !pageState.currentPetSaveEdit.name}">
+				  	<label class="control-label" for="name" translate="mypets.formSave.nameRequired"></label>
+				  	<input required class="form-control" id="name" name="name" maxlength="50" type="text" ng-model="pageState.currentPetSaveEdit.name">
+				</div>
+				
+				AnimalType Required
+				<div class="form-group label-floating" ng-class="{'has-error' : saveForm.animalType.$error && !pageState.currentPetSaveEdit.animalType}">
+      				<label for="animalType" class="control-label" translate="mypets.formSave.animalTypeRequired"></label>
+					<select required name="animalType" ng-change="loadBreed(pageState.currentPetSaveEdit.animalType)" id="animalType" class="form-control" ng-options="animalType as 'mypets.animalTypeList.' + animalType.label | translate for animalType in animalTypes track by animalType.label" ng-model="pageState.currentPetSaveEdit.animalType" >
+		      			<option value=""></option>
+		      		</select>
+    			</div>
+    			
+    			Breed
+    			<div class="form-group label-floating" ng-hide="pageState.currentPetSaveEdit.animalType == null || (pageState.currentPetSaveEdit.animalType.label != 'Chien' && pageState.currentPetSaveEdit.animalType.label != 'Chat')">
+      				<label for="breed" class="control-label" translate="mypets.formSave.breed"></label>
+					<select id="breed" class="form-control" ng-options="breed as 'mypets.breedList.' + breed.label | translate for breed in breeds track by breed.label" ng-model="pageState.currentPetSaveEdit.breed" >
+		      			<option value=""></option>
+		      		</select>
+    			</div>
+    			
+    			Age
+    			<div class="form-group label-floating">
+      				<label for="age" class="control-label" translate="mypets.formSave.age"></label>
+					<select id="age" class="form-control" ng-options="age as 'mypets.ageList.' + age | translate for age in AGES track by age" ng-model="pageState.currentPetSaveEdit.age">
+		      			<option value=""></option>
+		      		</select>
+    			</div>
+    			
+    			Sexe
+    			<div class="form-group label-floating">
+      				<label for="gender" class="control-label" translate="mypets.formSave.sexe"></label>
+					<select id="gender" class="form-control" ng-options="gender as 'mypets.genderList.' + gender | translate for gender in GENDERS track by gender" ng-model="pageState.currentPetSaveEdit.sexe">
+		      			<option value=""></option>
+		      		</select>
+    			</div>
+  				
+  				Chip
+  				<div class="form-group label-floating">
+				  	<label class="control-label" for="chip" translate="mypets.formSave.chip"></label>
+				  	<input class="form-control" id="chip" maxlength="50" type="text" ng-model="pageState.currentPetSaveEdit.chip">
+				</div>
+				
+				Tattoo
+				<div class="form-group label-floating">
+				  	<label class="control-label" for="tattoo" translate="mypets.formSave.tattoo"></label>
+				  	<input class="form-control" id="tattoo" type="text" maxlength="50" ng-model="pageState.currentPetSaveEdit.tatoo">
+				</div>
+				
+				Color(s)
+				<div class="form-group label-floating">
+				  	<label class="control-label" for="colors" translate="mypets.formSave.colors"></label>
+				  	<input class="form-control" id="colors" type="text" maxlength="255" ng-model="pageState.currentPetSaveEdit.colors">
+				</div>
+			</form>
+		</div>
+    </div>
+</div> -->
+
+
+<div class="main-wrapper mypets" ng-class="{'valign-wrapper': !myPets.length > 0, 'noSelectedPet': !pageState.currentPet && !pageState.createMode}">
+	<!-- If there is pet -->
+	<div class="container" ng-if="myPets.length > 0 || pageState.createMode">
+		<div class="row">
+			<div class="col-xs-12 col-sm-4" ng-if="myPets.length > 0">
+				<div class="mypets-list">
+					<ul class="collection">
+						<li class="collection-item avatar" ng-class="{'active': pageState.currentPet.id == pet.id}" ng-repeat="pet in myPets | orderBy: 'name'" ng-click="displayPetDetails(pet)">
+							<!-- Icone -->
+							<img ng-if="pet.photo" ng-src="{{pet.photo}}" alt="Pet picture" class="circle red lighten-1">				    
+							<img ng-if="!pet.photo && pet.animalType.label == 'Chat'" src="http://img15.hostingpics.net/pics/818865caticon.png" alt="Cat picture" class="circle red lighten-1">			        
+							<img ng-if="!pet.photo && pet.animalType.label == 'Chien'" src="http://img15.hostingpics.net/pics/765245dogicon.png" alt="Dog picture" class="circle red lighten-1">			        
+							<img ng-if="!pet.photo && pet.animalType.label != 'Chien' && pet.animalType.label != 'Chat'" src="http://img15.hostingpics.net/pics/626082othericon.png" alt="Other picture" class="circle red lighten-1">
+							<!-- Infos -->
+							<span class="title">{{pet.name}}</span>
+							<p class="truncate" ng-if="!pet.breed && pet.animalType.label"> 
+								<span translate="mypets.animalTypeList.{{pet.animalType.label}}"></span>
+							</p>
+							<p class="truncate" ng-if="pet.breed.label && pet.animalType.label"> 
+								<span translate="mypets.animalTypeList.{{pet.animalType.label}}"></span>,
+								<span translate="mypets.formSave.breed"></span> 
+								<span translate="mypets.breedList.{{pet.breed.label}}"></span>
+							</p>
+							<!-- actions -->
+							<a href="#!" class="secondary-content"><i class="material-icons">launch</i></a>
+						</li>
+					</ul>
+					<button ng-click="createNewPet()" class="btn btn-flat white-text red lighten-1 addPetButton">
+						<i class="material-icons">add_box</i><span translate="mypets.createNew">Ajouter un animal</span>					
+					</button>					
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-8" ng-if="pageState.viewMode || pageState.editMode">
+				<div class="pet-details white">
+					<div class="pet-details-thumbnail red lighten-1" style="background-image: url('{{pageState.currentPet.photo}}');">
+						<div class="pet-details-header red lighten-1 white-text">
+							<h2 class="pet-details-header-name">{{pageState.currentPet.name}}<small class="white-text"><span ng-if="pageState.currentPet.age && !pageState.currentPet.age == ''"translate="mypets.ageList.{{pageState.currentPet.age}}"></span><span ng-if="pageState.currentPet.sexe && !pageState.currentPet.sexe == ''" translate="mypets.genderList.{{pageState.currentPet.sexe}}"></span></small></h2>	
+							<ul>
+								<li ng-class="{'disabled': pageState.viewMode}">									
+		  	  						<a ng-click="!saveForm.$valid || savePet(pageState.currentPetSaveEdit)" class="btn green lighten-1 white-text btn-fab" title="{{'mypets.save'|translate}}"><i class="material-icons">done</i></a>
+								</li>
+								<li ng-class="{'disabled': pageState.viewMode}">
+									<a class="btn btn-fab white red-text lighten-text-1" ng-click="displayPetDetails(pageState.currentPet)" title="{{'mypets.back'|translate}}"><i class="material-icons">arrow_back</i></a>
+								</li>
+								<li ng-class="{'disabled': !pageState.viewMode}">
+									<a ui-sref="mypets.delete({id : pageState.currentPet.id})" class="btn btn-fab white red-text lighten-text-1" title="{{'mypets.delete'|translate}}"><i class="material-icons">delete</i></a>
+								</li>
+								<li ng-class="{'disabled': !pageState.viewMode}">
+									<a ng-click="editView(pageState.currentPet.id)" class="btn blue lighten-2 white-text btn-fab" title="{{'mypets.edit'|translate}}"><i class="material-icons">edit</i></a>									
+								</li>
+								<li ng-show="!petIsLost" ng-class="{'disabled': !pageState.viewMode}">
+									<a ng-click="petLost(pageState.currentPet.id)" class="btn orange lighten-2 white-text btn-fab" title="{{'mypets.lost'|translate}}"><i class="material-icons">warning</i></a>
+								</li>
+								<li ng-show="petIsLost" ng-class="{'disabled': !pageState.viewMode}">
+									<a ng-click="petFind(pageState.currentPet.id)" class="btn orange lighten-2 white-text btn-fab" title="{{'mypets.recover'|translate}}" ><i class="material-icons">home</i></a>
+								</li>
+							</ul>						
+						</div>						
+					</div>
+					<div class="pet-details-content">
+						<div class="pet-details-content-view" ng-class="{'editing': pageState.editMode}">
+							<form class="form-group">					
+								<div class="row">
+									<div class="col-xs-12 col-md-6">
+										<!-- Name Required -->
+										<div class="form-group " ng-class="{'has-error' : saveForm.name.$error && !pageState.currentPetSaveEdit.name}">
+										  	<label class="control-label" for="fname" translate="mypets.formSave.nameRequired"></label>
+										  	<input disabled required class="form-control" id="fname" name="name" maxlength="50" type="text" ng-model="pageState.currentPetSaveEdit.name">
+										</div>	
+									</div>
+									<div class="col-xs-12 col-md-6">														
+										<!-- AnimalType Required -->
+										<div class="form-group " ng-class="{'has-error' : saveForm.animalType.$error && !pageState.currentPetSaveEdit.animalType}">
+						      				<label for="fanimalType" class="control-label" translate="mypets.formSave.animalTypeRequired"></label>
+											<select  disabled required name="animalType" ng-change="loadBreed(pageState.currentPetSaveEdit.animalType)" id="fanimalType" class="form-control" ng-options="animalType as 'mypets.animalTypeList.' + animalType.label | translate for animalType in animalTypes track by animalType.label" ng-model="pageState.currentPetSaveEdit.animalType" >
+								      			<option value=""></option>
+								      		</select>
+						    			</div>
+									</div>
+								</div>	
+
+								<div class="row">
+									<div class="col-xs-12 col-md-6">
+						    			<!-- Breed -->
+						    			<div class="form-group " ng-hide="pageState.currentPetSaveEdit.animalType == null || (pageState.currentPetSaveEdit.animalType.label != 'Chien' && pageState.currentPetSaveEdit.animalType.label != 'Chat')">
+						      				<label for="fbreed" class="control-label" translate="mypets.formSave.breed"></label>
+											<select  disabled id="fbreed" class="form-control" ng-options="breed as 'mypets.breedList.' + breed.label | translate for breed in breeds track by breed.label" ng-model="pageState.currentPetSaveEdit.breed" >
+								      			<option value=""></option>
+								      		</select>
+    									</div>
+									</div>
+									<div class="col-xs-12 col-md-6">
+						    			<!-- Age -->
+						    			<div class="form-group ">
+						      				<label for="fage" class="control-label" translate="mypets.formSave.age"></label>
+											<select  disabled id="fage" class="form-control" ng-options="age as 'mypets.ageList.' + age | translate for age in AGES track by age" ng-model="pageState.currentPetSaveEdit.age">
+								      			<option value=""></option>
+								      		</select>
+						    			</div>
+									</div>
+								</div>	
+
+								<div class="row">
+									<div class="col-xs-12 col-md-6">
+										<!-- Sexe -->
+						    			<div class="form-group ">
+						      				<label for="fgender" class="control-label" translate="mypets.formSave.sexe"></label>
+											<select disabled id="fgender" class="form-control" ng-options="gender as 'mypets.genderList.' + gender | translate for gender in GENDERS track by gender" ng-model="pageState.currentPetSaveEdit.sexe">
+								      			<option value=""></option>
+								      		</select>
+						    			</div>
+									</div>
+									<div class="col-xs-12 col-md-6">
+						  				<!-- Chip -->
+						  				<div class="form-group ">
+										  	<label class="control-label" for="fchip" translate="mypets.formSave.chip"></label>
+										  	<input disabled class="form-control" id="fchip" maxlength="50" type="text" ng-model="pageState.currentPetSaveEdit.chip">
+										</div>
+									</div>
+								</div>	
+
+								<div class="row">
+									<div class="col-xs-12 col-md-6">
+										<!-- Tattoo -->
+										<div class="form-group ">
+										  	<label class="control-label" for="ftattoo" translate="mypets.formSave.tattoo"></label>
+										  	<input disabled class="form-control" id="ftattoo" type="text" maxlength="50" ng-model="pageState.currentPetSaveEdit.tatoo">
+										</div>
+									</div>
+									<div class="col-xs-12 col-md-6">
+										<!-- Color(s) -->
+										<div class="form-group ">
+										  	<label class="control-label" for="fcolors" translate="mypets.formSave.colors"></label>
+										  	<input disabled class="form-control" id="fcolors" type="text" maxlength="255" ng-model="pageState.currentPetSaveEdit.colors">
+										</div>
+									</div>
+								</div>
+							</form>									
+						</div>
+						<div class="pet-details-content-form" ng-class="{'editing': pageState.editMode}">
+							<form novalidate class="form-group" name="saveForm">
+
+								<div class="form-group ">
+								  	<label class="control-label" for="image" translate="mypets.formSave.photo"></label>
+								  	<input class="form-control" maxlength="500" id="image" type="text" ng-model="pageState.currentPetSaveEdit.photo">
+								  	<p class="help-block" translate="mypets.formSave.photoHelp"></p>
+								</div>
+							
+								<div class="row">
+									<div class="col-xs-12 col-md-6">
+										<!-- Name Required -->
+										<div class="form-group " ng-class="{'has-error' : saveForm.name.$error && !pageState.currentPetSaveEdit.name}">
+										  	<label class="control-label" for="name" translate="mypets.formSave.nameRequired"></label>
+										  	<input required class="form-control" id="name" name="name" maxlength="50" type="text" ng-model="pageState.currentPetSaveEdit.name">
+										</div>	
+									</div>
+									<div class="col-xs-12 col-md-6">														
+										<!-- AnimalType Required -->
+										<div class="form-group " ng-class="{'has-error' : saveForm.animalType.$error && !pageState.currentPetSaveEdit.animalType}">
+						      				<label for="animalType" class="control-label" translate="mypets.formSave.animalTypeRequired"></label>
+											<select required name="animalType" ng-change="loadBreed(pageState.currentPetSaveEdit.animalType)" id="animalType" class="form-control" ng-options="animalType as 'mypets.animalTypeList.' + animalType.label | translate for animalType in animalTypes track by animalType.label" ng-model="pageState.currentPetSaveEdit.animalType" >
+								      			<option value=""></option>
+								      		</select>
+						    			</div>
+									</div>
+								</div>	
+
+								<div class="row">
+									<div class="col-xs-12 col-md-6">
+						    			<!-- Breed -->
+						    			<div class="form-group " ng-hide="pageState.currentPetSaveEdit.animalType == null || (pageState.currentPetSaveEdit.animalType.label != 'Chien' && pageState.currentPetSaveEdit.animalType.label != 'Chat')">
+						      				<label for="breed" class="control-label" translate="mypets.formSave.breed"></label>
+											<select id="breed" class="form-control" ng-options="breed as 'mypets.breedList.' + breed.label | translate for breed in breeds track by breed.label" ng-model="pageState.currentPetSaveEdit.breed" >
+								      			<option value=""></option>
+								      		</select>
+    									</div>
+									</div>
+									<div class="col-xs-12 col-md-6">
+						    			<!-- Age -->
+						    			<div class="form-group ">
+						      				<label for="age" class="control-label" translate="mypets.formSave.age"></label>
+											<select id="age" class="form-control" ng-options="age as 'mypets.ageList.' + age | translate for age in AGES track by age" ng-model="pageState.currentPetSaveEdit.age">
+								      			<option value=""></option>
+								      		</select>
+						    			</div>
+									</div>
+								</div>	
+
+								<div class="row">
+									<div class="col-xs-12 col-md-6">
+										<!-- Sexe -->
+						    			<div class="form-group ">
+						      				<label for="gender" class="control-label" translate="mypets.formSave.sexe"></label>
+											<select id="gender" class="form-control" ng-options="gender as 'mypets.genderList.' + gender | translate for gender in GENDERS track by gender" ng-model="pageState.currentPetSaveEdit.sexe">
+								      			<option value=""></option>
+								      		</select>
+						    			</div>
+									</div>
+									<div class="col-xs-12 col-md-6">
+						  				<!-- Chip -->
+						  				<div class="form-group ">
+										  	<label class="control-label" for="chip" translate="mypets.formSave.chip"></label>
+										  	<input class="form-control" id="chip" maxlength="50" type="text" ng-model="pageState.currentPetSaveEdit.chip">
+										</div>
+									</div>
+								</div>	
+
+								<div class="row">
+									<div class="col-xs-12 col-md-6">
+										<!-- Tattoo -->
+										<div class="form-group ">
+										  	<label class="control-label" for="tattoo" translate="mypets.formSave.tattoo"></label>
+										  	<input class="form-control" id="tattoo" type="text" maxlength="50" ng-model="pageState.currentPetSaveEdit.tatoo">
+										</div>
+									</div>
+									<div class="col-xs-12 col-md-6">
+										<!-- Color(s) -->
+										<div class="form-group ">
+										  	<label class="control-label" for="colors" translate="mypets.formSave.colors"></label>
+										  	<input class="form-control" id="colors" type="text" maxlength="255" ng-model="pageState.currentPetSaveEdit.colors">
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>			
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-8" ng-if="pageState.createMode" ng-class="{'col-sm-offset-2' : myPets.length <= 0}">
+				<div class="pet-create-form white">
+					<div class="pet-create-form-header red lighten-1">
+						<h2 class="pet-create-form-header-name white-text" translate="mypets.createNew"></h2>
+						<ul>
+							<li>									
+	  	  						<a ng-click="!saveForm.$valid || savePet(pageState.currentPetSaveEdit)" class="btn green lighten-1 white-text btn-fab" title="{{'mypets.save'|translate}}"><i class="material-icons">done</i></a>
+							</li>
+							<li>
+								<a class="btn btn-fab white red-text lighten-text-1" ng-click="initPageState()" title="{{'mypets.back'|translate}}"><i class="material-icons">arrow_back</i></a>
+							</li>
+						</ul>						
+					</div>	
+					<div class="pet-create-form-content">
+						<form novalidate class="form-group" name="saveForm">
+							<div class="form-group ">
+							  	<label class="control-label" for="image" translate="mypets.formSave.photo"></label>
+							  	<input class="form-control" maxlength="500" id="image" type="text" ng-model="pageState.currentPetSaveEdit.photo">
+							  	<p class="help-block" translate="mypets.formSave.photoHelp"></p>
+							</div>
+						
+							<div class="row">
+								<div class="col-xs-12 col-md-6">
+									<!-- Name Required -->
+									<div class="form-group " ng-class="{'has-error' : saveForm.name.$error && !pageState.currentPetSaveEdit.name}">
+									  	<label class="control-label" for="name" translate="mypets.formSave.nameRequired"></label>
+									  	<input required class="form-control" id="name" name="name" maxlength="50" type="text" ng-model="pageState.currentPetSaveEdit.name">
+									</div>	
+								</div>
+								<div class="col-xs-12 col-md-6">														
+									<!-- AnimalType Required -->
+									<div class="form-group " ng-class="{'has-error' : saveForm.animalType.$error && !pageState.currentPetSaveEdit.animalType}">
+					      				<label for="animalType" class="control-label" translate="mypets.formSave.animalTypeRequired"></label>
+										<select required name="animalType" ng-change="loadBreed(pageState.currentPetSaveEdit.animalType)" id="animalType" class="form-control" ng-options="animalType as 'mypets.animalTypeList.' + animalType.label | translate for animalType in animalTypes track by animalType.label" ng-model="pageState.currentPetSaveEdit.animalType" >
+							      			<option value=""></option>
+							      		</select>
+					    			</div>
+								</div>
+							</div>	
+
+							<div class="row">
+								<div class="col-xs-12 col-md-6">
+					    			<!-- Breed -->
+					    			<div class="form-group " ng-hide="pageState.currentPetSaveEdit.animalType == null || (pageState.currentPetSaveEdit.animalType.label != 'Chien' && pageState.currentPetSaveEdit.animalType.label != 'Chat')">
+					      				<label for="breed" class="control-label" translate="mypets.formSave.breed"></label>
+										<select id="breed" class="form-control" ng-options="breed as 'mypets.breedList.' + breed.label | translate for breed in breeds track by breed.label" ng-model="pageState.currentPetSaveEdit.breed" >
+							      			<option value=""></option>
+							      		</select>
+									</div>
+								</div>
+								<div class="col-xs-12 col-md-6">
+					    			<!-- Age -->
+					    			<div class="form-group ">
+					      				<label for="age" class="control-label" translate="mypets.formSave.age"></label>
+										<select id="age" class="form-control" ng-options="age as 'mypets.ageList.' + age | translate for age in AGES track by age" ng-model="pageState.currentPetSaveEdit.age">
+							      			<option value=""></option>
+							      		</select>
+					    			</div>
+								</div>
+							</div>	
+
+							<div class="row">
+								<div class="col-xs-12 col-md-6">
+									<!-- Sexe -->
+					    			<div class="form-group ">
+					      				<label for="gender" class="control-label" translate="mypets.formSave.sexe"></label>
+										<select id="gender" class="form-control" ng-options="gender as 'mypets.genderList.' + gender | translate for gender in GENDERS track by gender" ng-model="pageState.currentPetSaveEdit.sexe">
+							      			<option value=""></option>
+							      		</select>
+					    			</div>
+								</div>
+								<div class="col-xs-12 col-md-6">
+					  				<!-- Chip -->
+					  				<div class="form-group ">
+									  	<label class="control-label" for="chip" translate="mypets.formSave.chip"></label>
+									  	<input class="form-control" id="chip" maxlength="50" type="text" ng-model="pageState.currentPetSaveEdit.chip">
+									</div>
+								</div>
+							</div>	
+
+							<div class="row">
+								<div class="col-xs-12 col-md-6">
+									<!-- Tattoo -->
+									<div class="form-group ">
+									  	<label class="control-label" for="tattoo" translate="mypets.formSave.tattoo"></label>
+									  	<input class="form-control" id="tattoo" type="text" maxlength="50" ng-model="pageState.currentPetSaveEdit.tatoo">
+									</div>
+								</div>
+								<div class="col-xs-12 col-md-6">
+									<!-- Color(s) -->
+									<div class="form-group ">
+									  	<label class="control-label" for="colors" translate="mypets.formSave.colors"></label>
+									  	<input class="form-control" id="colors" type="text" maxlength="255" ng-model="pageState.currentPetSaveEdit.colors">
+									</div>
+								</div>
+							</div>
+						</form>						
+					</div>					
+				</div>			
+			</div>
+			<div class="selectPetAdvice text-center" ng-if="!pageState.viewMode && !pageState.editMode && !pageState.createMode">
+				<h3 translate="mypets.selectPetAdvice"></h3>
+			</div>
+		</div>
+	</div>	
+	<!-- else -->
+	<div class="valign text-center no-pets-panel" ng-if="!myPets.length > 0 && !pageState.createMode">
+		<p translate="mypets.noPet"></p>
+		<a ng-click="createNewPet()" class="btn btn-raised btn-primary red lighten-1" translate="mypets.createNew"></a>
+	</div>
+	<!-- endif -->	
+</div>
+

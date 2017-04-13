@@ -49,10 +49,26 @@ module.exports = function (grunt) {
             ngconstant: {
                 files: ['Gruntfile.js', 'pom.xml'],
                 tasks: ['ngconstant:dev']
+            },
+            css: {
+                files: 'src/main/webapp/assets/styles/scss/**/*.scss',
+                tasks: ['sass:dev', 'autoprefixer:dev']
             }
         },
         autoprefixer: {
-            // src and dest is configured in a subtask called "generated" by usemin
+          // blabla
+          dev: {
+            	options: {
+            	 	map: true
+            	},
+            	files: [{
+              		expand: true,
+              		cwd: 'src/main/webapp/styles/',
+              		src: ['*.css'],
+              		dest: 'src/main/webapp/styles/'
+            	}],
+            },
+
         },
         wiredep: {
             app: {
@@ -104,6 +120,10 @@ module.exports = function (grunt) {
         },
         clean: {
             dist: {
+                options: { 
+                    force: true,
+                    deleteEmptyFolders: true
+                },
                 files: [{
                     dot: true,
                     src: [
@@ -314,6 +334,89 @@ module.exports = function (grunt) {
                     VERSION: parseVersionFromPomXml()
                 }
             }
+        },
+
+        sass: {            
+            dev: {
+                options: {
+                  imagePath: "../../images",
+                  outputStyle: 'nested',
+                  sourceMap: true,
+                  loadPath: "bower_components/"
+                },
+                files: [{
+                  "expand": true,
+                  "cwd": "src/main/webapp/assets/styles/scss/",
+                  "src": ["*.scss"],
+                  "dest": "src/main/webapp/assets/styles/",
+                  "ext": ".css"
+                }]
+            },
+            prod: {
+                options: {
+                  imagePath: "../../images",
+                  outputStyle: 'compressed',
+                  loadPath: "bower_components/"
+                },
+                files: [{
+                  "expand": true,
+                  "cwd": "src/main/webapp/assets/styles/scss/",
+                  "src": ["*.scss"],
+                  "dest": "src/main/webapp/assets/styles/",
+                  "ext": ".css"
+                }]
+            }
+        },
+        px_to_rem: {            
+          dist: {
+            options: {
+              base: 10,
+              fallback: true
+            },
+            files: [{
+              expand: true,
+              cwd: 'src/main/webapp/styles/',
+              src: ['*.css'],
+              dest: 'src/main/webapp/assets/styles/'
+            }]
+          }
+        },
+        real_favicon: {            
+          create: {
+            // The favicon master picture
+            src: 'src/main/webapp/images/favicon/favicon.png',
+            // Directory where the generated pictures will be stored
+            dest: '<%= yeoman.dist %>/images/favicons/',
+            // Path to icon (eg. favicon.ico will be accessible through http://mysite.com/path/to/icons/favicon.ico)
+            // icons_path: '/path/to/icons',
+            // HTML files where the favicon code should be inserted
+            html: [],
+            design: {
+              // These options reflect the settings available in RealFaviconGenerator
+              ios: {
+                picture_aspect: 'no_change'
+              },
+              android_chrome: {
+                picture_aspect: 'no_change',
+                manifest: {
+                    name: 'XXX.fr',
+                    display: 'browser'
+                },
+              },
+              coast: {
+                picture_aspect: 'no_change'
+              },
+              windows: {
+                picture_aspect: 'no_change'
+              }
+            },
+            settings: {
+              // 0 = no compression, 5 = maximum compression
+              compression: 2,
+              // Default is Mitchell
+              scaling_algorithm: 'Mitchell'
+            }
+          }
         }
     });
 
@@ -321,6 +424,7 @@ module.exports = function (grunt) {
         'clean:server',
         'wiredep',
         'ngconstant:dev',
+        'sassdev',
         'browserSync',
         'watch'
     ]);
@@ -340,6 +444,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'wiredep:app',
+        'sass:prod',
         'ngconstant:prod',
         'useminPrepare',
         'ngtemplates',
@@ -355,6 +460,19 @@ module.exports = function (grunt) {
         'rev',
         'usemin',
         'htmlmin'
+        //'real_favicon',
+    ]);
+
+
+    grunt.registerTask('sassdev', [
+        'sass:dev',
+        'autoprefixer:dev'
+    ]);
+
+    grunt.registerTask('sassprod', [
+        'sass:prod',
+        'px_to_rem',
+        'autoprefixer'
     ]);
 
     

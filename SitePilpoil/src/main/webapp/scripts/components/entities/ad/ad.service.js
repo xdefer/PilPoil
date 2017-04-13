@@ -13,4 +13,12 @@ angular.module('pilpoilApp')
             },
             'update': { method:'PUT' }
         });
+    }).factory('AdsByAnimal', function($resource, DateUtils){
+    	return $resource('api/ads/animal/:id', {}, {
+    		'get' : {method: 'GET', isArray: true}
+    	});
+    }).factory('ArchiveAd', function($resource, DateUtils){
+    	return $resource('api/ads/archive/:id', {}, {
+    		'update' : {method: 'PUT'}
+    	});
     });

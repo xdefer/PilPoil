@@ -1,0 +1,72 @@
+{
+    "mypets": {
+        "title": "Mes Animaux",
+        "delete": {
+        	"question": "Etes-vous certain de vouloir supprimer {{ name }} ?"
+        },
+        "noPet": "Vous n'avez pas encore déclaré d'animaux",
+        "createNew": "Ajouter un animal",
+        "delete": "Supprimer",
+        "edit": "Editer",
+        "lost": "Déclarer perdu",
+        "close": "Fermer la fenêtre",
+        "cancel": "Annuler",
+        "save": "Sauvegarder",
+        "recover": "Déclarer retrouvé",
+        "form": {
+        	"name": "Nom : ",
+        	"animalType": "Type d'animal : ",
+        	"breed": "Race : ",
+        	"age": "Age : ",
+        	"sexe": "Genre : ",
+        	"chip": "Puce : ",
+        	"tattoo": "Tatouage : ",
+        	"colors": "Couleur(s) : ",
+        	"naM" : "Non indiqué",
+        	"naF" : "Non indiquée"
+       	},
+       	"formSave": {
+        	"photo": "Photo",
+        	"photoHelp": "Copier le lien d'une image hébergée",
+        	"nameRequired": "Nom *",
+        	"animalTypeRequired": "Type d'animal *",
+        	"breed": "Race ",
+        	"age": "Age",
+        	"sexe": "Genre",
+        	"chip": "Puce",
+        	"tattoo": "Tatouage",
+        	"colors": "Couleur(s)"
+       	},
+        "ageList": {
+	   		"Jeune": "Jeune",
+       		"Adulte": "Adulte"
+       	},
+        "genderList": {
+	   		"Mâle": "Mâle",
+       		"Femelle": "Femelle"
+       	},
+       	"breedList": {
+       		"Berger Allemand": "Berger Allemand",
+        	"Carlin" : "Carlin",
+        	"Golden Retriever" : "Golden Retriever",
+        	"Cavalier King Charles" : "Cavalier King Charles",
+        	"Akita Inu" : "Akita Inu",
+        	"Siamois" : "Siamois",
+        	"Bengal" : "Bengal",
+        	"Sacré de Birmanie" : "Sacré de Birmanie",
+        	"Maine coon" : "Maine coon",
+        	"Persan" : "Persan",
+        	"Norvégien" : "Norvégien",
+        	"Européen" : "Européen"
+       	},
+        "animalTypeList": {
+        	"Chien": "Chien",
+        	"Chat" : "Chat",
+        	"Poisson" : "Poisson",
+        	"Lapin" : "Lapin",
+        	"Autre" : "Autre"
+        },
+        "selectPetAdvice": "Sélectionnez un animal dans la liste",
+        "back": "Retour"
+    }
+}

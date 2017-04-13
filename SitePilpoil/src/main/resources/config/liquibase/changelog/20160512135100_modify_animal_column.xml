@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    
+    <changeSet id="20160512135100" author="yanick">
+    	<modifyDataType columnName="name" newDataType="varchar2(50)" tableName="animal"/>
+    	<modifyDataType columnName="tatoo" newDataType="varchar2(50)" tableName="animal"/>
+    	<modifyDataType columnName="chip" newDataType="varchar2(50)" tableName="animal"/>
+    	<modifyDataType columnName="photo" newDataType="varchar2(500)" tableName="animal"/>
+	</changeSet>
+	
+</databaseChangeLog>

@@ -1,0 +1,72 @@
+{
+    "mypets": {
+        "title": "My Pets",
+        "delete": {
+        	"question": "Are you sure you want to delete {{ name }} ?"
+        },
+        "noPet": "You don't have declared any pet",
+        "createNew": "Add a pet",
+        "delete": "Delete",
+        "edit": "Edit",
+        "close": "Close the window",
+        "lost": "Declared as lost",
+        "cancel": "Cancel",
+        "save": "Save",
+        "recover": "Declared as recovered",
+        "form": {
+        	"name": "Name : ",
+        	"animalType": "Animal type : ",
+        	"breed": "Breed : ",
+        	"age": "Age : ",
+        	"sexe": "Gender : ",
+        	"chip": "Chip : ",
+        	"tattoo": "Tattoo : ",
+        	"colors": "Color(s) : ",
+        	"naM" : "Not indicated",
+        	"naF" : "Not indicated"
+       	},
+       	"formSave": {
+        	"photo": "Photo",
+        	"photoHelp": "Paste the link of a hosted picture",
+        	"nameRequired": "Name *",
+        	"animalTypeRequired": "Animal type *",
+        	"breed": "Breed ",
+        	"age": "Age",
+        	"sexe": "Gender",
+        	"chip": "Chip",
+        	"tattoo": "Tattoo",
+        	"colors": "Color(s)"
+       	},
+        "ageList": {
+	   		"Jeune": "Young",
+       		"Adulte": "Adult"
+       	},
+       	"genderList": {
+	   		"Mâle": "Male",
+       		"Femelle": "Female"
+       	},
+       	"breedList" : {
+        	"Berger Allemand": "German shepherd",
+        	"Carlin" : "Pug",
+        	"Golden Retriever" : "Golden Retriever",
+        	"Cavalier King Charles" : "Cavalier King Charles",
+        	"Akita Inu" : "Akita Inu",
+        	"Siamois" : "Siamese",
+        	"Bengal" : "Bengal",
+        	"Sacré de Birmanie" : "Birman",
+        	"Maine coon" : "Maine coon",
+        	"Persan" : "Persian",
+        	"Norvégien" : "Norwegian",
+        	"Européen" : "European"
+        },
+        "animalTypeList": {
+        	"Chien": "Dog",
+        	"Chat": "Cat",
+        	"Poisson": "Fish",
+        	"Lapin": "Rabbit",
+        	"Autre": "Other"
+        },
+        "selectPetAdvice": "Select a pet in the list",
+        "back": "Back"
+    }
+}

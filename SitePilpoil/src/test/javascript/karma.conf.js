@@ -37,6 +37,11 @@ module.exports = function (config) {
             'main/webapp/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
             'main/webapp/bower_components/bootstrap-material-design/dist/js/material.js',
             'main/webapp/bower_components/bootstrap-material-design/dist/js/ripples.js',
+            'main/webapp/bower_components/ngmap/build/scripts/ng-map.js',
+            'main/webapp/bower_components/momentjs/moment.js',
+            'main/webapp/bower_components/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js',
+            'main/webapp/bower_components/angular-reverse-geocode/angular-reverse-geocode.js',
+            'main/webapp/bower_components/slick-carousel/slick/slick.js',
             'main/webapp/bower_components/angular-mocks/angular-mocks.js',
             // endbower
             'main/webapp/scripts/app/app.js',

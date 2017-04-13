@@ -1,0 +1,24 @@
+.main-wrapper.login,
+.main-wrapper.passwordLost,
+.main-wrapper.register,
+.main-wrapper.accountSetting,
+.main-wrapper.accountPassword {
+    min-height: calc(100vh - 197px);
+}
+
+.main-wrapper.login,
+.main-wrapper.passwordLost,
+.main-wrapper.register,
+.main-wrapper.accountSetting,
+.main-wrapper.accountPassword {
+
+    .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .form-group {
+        margin: 0;
+    }
+}

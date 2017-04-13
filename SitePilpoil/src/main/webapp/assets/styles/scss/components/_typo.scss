@@ -1,0 +1,14 @@
+
+
+
+$fontBase : "Roboto", "Helvetica", "Arial", sans-serif;
+$fontOriginal : 'Gloria Hallelujah', cursive;
+$fontTitle : "Roboto", "Helvetica", "Arial", sans-serif;
+
+
+.truncate {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

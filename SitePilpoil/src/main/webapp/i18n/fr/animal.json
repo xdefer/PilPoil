@@ -11,7 +11,7 @@
             "updated": "Le Animal avec l'identifiant {{ param }} a été mis à jour",
             "deleted": "Le Animal avec l'identifiant {{ param }} a été supprimé",
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le Animal {{ id }} ?"
+                "question": "Etes-vous certain de vouloir effacer {{ name }} ?"
             },
             "detail": {
                 "title": "Animal"

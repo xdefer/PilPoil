@@ -3,7 +3,10 @@
         "title": "pilpoil",
         "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
         "menu": {
+        	"mypets" : "My Pets",
+        	"findPet": "I Found",
             "home": "Home",
+            "connexionbutton" : "Log In",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
@@ -51,7 +54,7 @@
         "messages": {
             "info": {
                 "authenticated": "If you want to <a class=\"alert-link\" href=\"#/login\">sign in</a>, you can try the default accounts:<br/>- Administrator (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\"user\").",
-                "register": "You don't have an account yet? <a class=\"alert-link\" href=\"#/register\">Register a new account</a>"
+                "register": "Register"
             },
             "error": {
                 "dontmatch": "The password and its confirmation do not match!"
@@ -87,6 +90,7 @@
             "back": "Back",
             "cancel": "Cancel",
             "delete": "Delete",
+            "remove": "Remove",
             "edit": "Edit",
             "save": "Save",
             "view": "View"
@@ -119,5 +123,8 @@
         "emailexists": "E-mail is already in use!",
         "idexists": "A new {{ entityName }} cannot already have an ID"
     },
-    "footer": "This is your footer"
+   "footer": {
+    	"about": "About",
+    	"right": " - Pil'poil app, all rights reserved. The entire content and structure of « Pil'poil app » is protected by the Intellectual Property Code, in particular by the articles L.111-1 & L.123-1."
+    }
 }

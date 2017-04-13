@@ -136,13 +136,14 @@ public class UserResource {
             .map(user -> {
                 user.setLogin(managedUserDTO.getLogin());
                 user.setFirstName(managedUserDTO.getFirstName());
-                user.setDistance(managedUserDTO.getDistance());
-                user.setPhone(managedUserDTO.getPhone());
                 user.setLastName(managedUserDTO.getLastName());
                 user.setEmail(managedUserDTO.getEmail());
                 user.setActivated(managedUserDTO.isActivated());
                 user.setLangKey(managedUserDTO.getLangKey());
+                user.setDistance(managedUserDTO.getDistance());
+                user.setPhone(managedUserDTO.getPhone());
                 Set<Authority> authorities = user.getAuthorities();
+                authorities.clear();
                 authorities.clear();
                 managedUserDTO.getAuthorities().stream().forEach(
                     authority -> authorities.add(authorityRepository.findOne(authority))

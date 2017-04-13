@@ -1,0 +1,49 @@
+html {
+	font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+[role="main"] {
+    flex: 1 0 auto;
+    position: relative;
+    z-index: 2;
+    margin-top: -1px;
+
+    .main-wrapper:not(.findpet):not(.mypets) {
+        margin: 30px 0;
+    }
+}
+
+::selection { /* effet souris  */
+    background: $mainColor; /* REMPLACER PAR LA COULEUR DÉSIRÉE*/
+    color: black;
+}
+
+.shadowed {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.valign-wrapper {
+    display: flex;
+    align-items: center;
+
+    >.valign {
+        display: block;
+        width: 100%;
+    }
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
